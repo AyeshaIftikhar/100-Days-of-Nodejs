@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [100 Days of Node.Js](#100-days-of-nodejs)
+  - [🎯 Rules](#-rules)
+  - [🔗 Connect With Me](#-connect-with-me)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 100 Days of Node.Js
 
 **Goal:** Build 100 Node.js projects to master backend development.  
