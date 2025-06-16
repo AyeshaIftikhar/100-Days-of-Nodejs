@@ -1,12 +1,24 @@
-name: Update README  
-on:  
-  push:  
-    branches: [ "main" ]  
+name: Update README
+on:
+  push:
+    branches: [ "main" ]
 permissions:
-  contents: write 
-jobs:  
-  update:  
-    runs-on: ubuntu-latest  
-    steps:  
-      - uses: actions/checkout@v3  
-      - uses: technote-space/toc-generator@v4  
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run table update script
+        run: node scripts/update-table.js
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update table in README.md"
