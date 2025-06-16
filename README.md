@@ -2,10 +2,11 @@
 
 **Goal:** Build 100 Node.js projects to master backend development.  
 
-| #  | Project               | Skills Learned          | Live Demo | Code |  
-|----|-----------------------|-------------------------|-----------|------|  
-| 1  | [Hello World Server](01-hello-world-server) | HTTP Basics | [Demo](hello-world-server/hello-world.png) | [Code](hello-world-server/server.js) |  
-| 2  | *[Next Project...]* | *[Skills...]* | *[Link]* | *[Link]* |  
+<!-- PROJECT_TRACKING_TABLE_START -->
+| Project Name | Status   | Last Updated        |
+| ------------ | -------- | ------------------ |
+| file-organizer-cli | In Progress | 2025-06-16           |
+<!-- PROJECT_TRACKING_TABLE_END -->
 
 
 ## 🎯 Rules  

@@ -1,4 +1,4 @@
-name: Update README
+name: Update README Tracking Table
 on:
   push:
     branches: [ "main" ]
@@ -15,10 +15,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Run table update script
-        run: node scripts/update-table.js
+      - name: Run tracking table update script
+        run: node scripts/update-tracking-table.js
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update table in README.md"
+          commit_message: "chore: update project tracking table in README.md"
