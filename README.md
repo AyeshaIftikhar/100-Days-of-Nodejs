@@ -3,9 +3,13 @@
 **Goal:** Build 100 Node.js projects to master backend development.  
 
 <!-- PROJECT_TRACKING_TABLE_START -->
-| Project Name | Status   | Last Updated        |
+| Project Name | Status   | Last Updated       |
 | ------------ | -------- | ------------------ |
-| file-organizer-cli | In Progress | 2025-06-16           |
+| hello-world-server | Completed | 2025-06-16  |
+| ------------ | -------- | ------------------ |
+| file-organizer-cli | Completed | 2025-06-16  |
+| ------------ | -------- | ------------------ |
+| weather-cli-tools | In Progress |            |
 <!-- PROJECT_TRACKING_TABLE_END -->
 
 
