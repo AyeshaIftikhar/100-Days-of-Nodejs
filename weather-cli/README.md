@@ -3,9 +3,9 @@
 A command-line tool to fetch current weather information for any city using the OpenWeatherMap API.
 
 
-| [New York](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/weather-cli-newyork.png) | [London](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/weather-cli-london.png)  | 
+| ![New York](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/weather-cli-newyork.png) | ![London](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/weather-cli-london.png)  | 
 | ------------ | -------- |
-| [Tokyo](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/weather-cli-tokyo.png)  | [London](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/weather-cli-london-imperial.png)  | 
+| ![Tokyo](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/weather-cli-tokyo.png)  | ![London](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/weather-cli-london-imperial.png)  | 
 
 
 ## Features

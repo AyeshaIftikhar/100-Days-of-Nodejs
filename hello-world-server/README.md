@@ -48,7 +48,7 @@ server.listen(PORT, () => {
 
 ➡️ You should see:
 
-[HelloWorld](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/hello-world.png)
+![HelloWorld](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/hello-world.png)
 
 ## 🔍 Explanation
 `http.createServer()`
