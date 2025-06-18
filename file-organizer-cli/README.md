@@ -2,6 +2,7 @@
 
 A Node.js command-line tool to automatically organize files in a directory by extension (e.g., `.jpg` → `/images`, `.pdf` → `/documents`).
 
+
 ## Features
 - 🗂️ Categorizes files into folders by type
 - ⚡ Supports 20+ file extensions out of the box
@@ -12,8 +13,8 @@ A Node.js command-line tool to automatically organize files in a directory by ex
 
 ```bash
 # Clone repo
-git clone https://github.com/AyeshaIftikhar/file-organizer-cli.git
-cd file-organizer-cli
+git clone https://github.com/AyeshaIftikhar/100-Days-of-Nodejs.git
+cd 100-Days-of-Nodejs/file-organizer-cli
 
 # Install dependencies
 npm install
@@ -50,18 +51,52 @@ node index.js --dir=./your-folder
 #### 4. Make it executable (Linux/Mac):
 
 ```bash
-    chmod +x index.js
+    chmod +x organizer.js
 ```
 
 #### 5. Test it
 
 ```bash
 # Dry run
-node index.js --dir=../../../Downloads --dry 
+node organizer.js --dir=../../../Downloads --dry 
 
 # Real execution
-node index.js --dir=../../../Downloads
+node organizer.js --dir=../../../Downloads
 ```
 
+## Publish
 
+- Update `package.json`
+Add a bin field to specify the CLI command name (e.g., organize-files):
+
+```JSON
+{
+  // ...existing code...
+  "bin": {
+    "organize-files": "./index.js"
+  },
+  // ...existing code...
+}
+```
+
+- Log in to npm
+```bash
+npm login
+```
+
+- Publish your project
+```bash
+npm publish
+```
+*__Note:__ This package is published on `npm` under name `dirmaster`.*
+
+## Install globally and use
+```bash
+npm install -g dirmaster
+```
+
+- Run it anywhere
+```bash
+dirmaster --dir=./somefolder
+```
 

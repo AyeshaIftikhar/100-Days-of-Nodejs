@@ -3,5 +3,6 @@
   "documents": ["pdf", "docx", "txt", "md", "csv"],
   "audio": ["mp3", "wav", "ogg"],
   "archives": ["zip", "rar", "tar", "gz"],
-  "code": ["js", "json", "html", "css", "py"]
+  "code": ["js", "json", "html", "css", "py"],
+  "videos": ["mp4", "avi", "mkv", "mov"]
 }

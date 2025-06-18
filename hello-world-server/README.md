@@ -45,8 +45,10 @@ server.listen(PORT, () => {
 ```
 
 ➡️ Open http://localhost:3000 in your browser.
+
 ➡️ You should see:
-[HelloWorld](hello-world-server/hello-world.png)
+
+[HelloWorld](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/hello-world.png)
 
 ## 🔍 Explanation
 `http.createServer()`

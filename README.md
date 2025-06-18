@@ -5,7 +5,11 @@
 <!-- PROJECT_TRACKING_TABLE_START -->
 | Project Name | Status   | Last Updated        |
 | ------------ | -------- | ------------------ |
-| file-organizer-cli | In Progress | 2025-06-16           |
+| hello-world-server | Completed | 2025-06-16           |
+| ------------ | -------- | ------------------ |
+| file-organizer-cli | Completed | 2025-06-17           |
+| ------------ | -------- | ------------------ |
+| weather-cli | Completed | 2025-06-18           |
 <!-- PROJECT_TRACKING_TABLE_END -->
 
 

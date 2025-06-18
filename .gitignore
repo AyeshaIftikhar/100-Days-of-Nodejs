@@ -27,3 +27,6 @@ build/
 Dockerfile
 
 package-lock.json
+
+config/
+PUBLISH-PACKAGE-TO-NPM.md

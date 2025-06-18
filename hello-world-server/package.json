@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ayesha Iftikhar @ Aishayy",
   "license": "ISC",
-  "description": ""
+  "description": "A simple web server that responds with \"Hello, World!\" when accessed."
 }

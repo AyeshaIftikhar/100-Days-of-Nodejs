@@ -1,5 +1,5 @@
 {
-  "name": "file-organizer-cli",
+  "name": "dirmaster",
   "version": "1.0.0",
   "description": "A Node.js command-line tool to automatically organize files in a directory by extension (e.g., `.jpg` → `/images`, `.pdf` → `/documents`).",
   "main": "index.js",
@@ -7,10 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ayesha Iftikhar @ Aishayy",
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.4.1",
     "commander": "^14.0.0"
+  },
+  "bin": {
+    "organize-files": "./index.js"
   }
 }
