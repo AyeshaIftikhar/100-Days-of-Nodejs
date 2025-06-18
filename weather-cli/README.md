@@ -10,13 +10,13 @@ A command-line tool to fetch current weather information for any city using the 
 
 ## Features
 
-✅ Get current weather conditions for any city worldwide
-🌡️ Temperature in Celsius, Fahrenheit, or Kelvin
-💨 Wind speed and direction
-💧 Humidity percentage
-📊 Atmospheric pressure
-👀 Visibility information
-🎨 Colorful terminal output
+- ✅ Get current weather conditions for any city worldwide
+- 🌡️ Temperature in Celsius, Fahrenheit, or Kelvin
+- 💨 Wind speed and direction
+- 💧 Humidity percentage
+- 📊 Atmospheric pressure
+- 👀 Visibility information
+- 🎨 Colorful terminal output
 
 ### Project Setup
 

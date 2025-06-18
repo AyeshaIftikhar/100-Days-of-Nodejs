@@ -2,10 +2,10 @@
 
 A simple web server that responds with "Hello, World!"
 
-🚀 What You'll Learn:
-✅ Basic Node.js http module
-✅ Creating a server and handling requests
-✅ Running a Node.js app locally
+- 🚀 What You'll Learn:
+- ✅ Basic Node.js http module
+- ✅ Creating a server and handling requests
+- ✅ Running a Node.js app locally
 
 ## 📝 Step-by-Step Code
 ### 1. Create a new project folder
