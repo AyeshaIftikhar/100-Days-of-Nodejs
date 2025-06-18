@@ -6,7 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "file-organizer",
+    "cli",
+    "command-line",
+    "nodejs",
+    "fs",
+    "file-system",
+    "organize-files",
+    "file-management",
+    "directory-structure"
+  ],
   "author": "Ayesha Iftikhar @ Aishayy",
   "license": "ISC",
   "dependencies": {

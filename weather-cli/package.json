@@ -5,7 +5,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "weather",
+    "cli",
+    "command-line",
+    "api",
+    "openweathermap",
+    "axios",
+    "chalk",
+    "commander"
+  ],
   "author": "Ayesha Iftikhar @ Aishayy",
   "license": "ISC",
   "description": "A command-line tool to fetch current weather information for any city using the OpenWeatherMap API.",

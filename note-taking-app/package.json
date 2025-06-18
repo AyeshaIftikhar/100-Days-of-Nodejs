@@ -1,0 +1,17 @@
+{
+  "name": "note-taking-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "note-taking",
+    "app",
+    "electron",
+    "markdown"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "This is a simple note-taking application using Node.js and the File System (fs) module for CRUD operations (Create, Read, Update, Delete)."
+}

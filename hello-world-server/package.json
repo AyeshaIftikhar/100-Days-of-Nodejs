@@ -5,7 +5,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "hello-world",
+    "web-server",
+    "nodejs",
+    "express",
+    "http"
+  ],
   "author": "Ayesha Iftikhar @ Aishayy",
   "license": "ISC",
   "description": "A simple web server that responds with \"Hello, World!\" when accessed."
