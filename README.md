@@ -7,7 +7,8 @@
 | hello-world-server | Completed | 2025-06-16  |
 | file-organizer-cli | Completed | 2025-06-17  |
 | weather-cli | Completed | 2025-06-18         |
-| Note Taking App (FS Module CURD) | In Progress | 2025-06-19         |
+| Note Taking App (FS Module CURD) | Completed | 2025-06-19         |
+| Random Quote Generator | In Progress | 2025-06-20         |
 
 
 ## 🎯 Rules  
