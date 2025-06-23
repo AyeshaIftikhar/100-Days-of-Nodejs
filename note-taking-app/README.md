@@ -1,5 +1,7 @@
 # Note-Taking App (FS Module CRUD)
 
+![Note Taking App](https://youtu.be/6mBfj6ml3EU)
+
 This is a simple note-taking application using Node.js and the File System (fs) module for CRUD operations (Create, Read, Update, Delete).
 
 ## Features
