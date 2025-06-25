@@ -1,5 +1,7 @@
 # 🎲 Random Quote Generator
 
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/JEWfWXbVktI/0.jpg)](http://www.youtube.com/watch?v=JEWfWXbVktI)
+
 This project is a Random Quote Generator built with Node.js.
 It loads a list of quotes from a JSON file and displays a random quote in the terminal, with colored output using the `chalk` or `chalk-animation` libraries.
 

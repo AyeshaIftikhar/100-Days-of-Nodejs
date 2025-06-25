@@ -1,0 +1,23 @@
+{
+  "name": "bmi-calculator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bmi",
+    "calculator",
+    "api",
+    "nodejs",
+    "express",
+    "health",
+    "fitness"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "This BMI (Body Mass Index) Calculator API is a Node.js application that provides HTTP endpoints for calculating BMI and determining weight categories based on the calculated value. BMI is a simple index of weight-for-height commonly used to classify underweight, normal weight, overweight, and obesity in adults.",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
