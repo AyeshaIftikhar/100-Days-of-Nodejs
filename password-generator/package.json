@@ -1,0 +1,26 @@
+{
+  "name": "password-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "password",
+    "generator",
+    "secure",
+    "random",
+    "cli",
+    "nodejs"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "This is a secure password generator command-line tool built with Node.js that creates strong, random passwords with various customization options.",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "clipboardy": "^4.0.0",
+    "commander": "^14.0.0",
+    "crypto": "^1.0.1",
+    "inquirer": "^12.6.3"
+  }
+}
