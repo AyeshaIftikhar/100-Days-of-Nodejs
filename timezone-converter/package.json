@@ -16,7 +16,7 @@
   ],
   "author": "Ayesha Iftikhar @ Aishayy",
   "license": "ISC",
-  "description": "",
+  "description": "Implementation with three different modes for timezone conversion, allowing you to choose between Moment.js, Luxon, or the native Intl API.",
   "dependencies": {
     "luxon": "^3.6.1",
     "moment": "^2.30.1",
