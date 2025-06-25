@@ -1,0 +1,25 @@
+{
+  "name": "timezone-converter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "timezone",
+    "converter",
+    "moment",
+    "moment-timezone",
+    "date",
+    "time",
+    "utc"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "luxon": "^3.6.1",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.6.0"
+  }
+}
