@@ -16,7 +16,7 @@
 | 10. | 🌍 HTTP Proxy Server                             | ✅   | 2025-06-25   |
 | 11. | 🕸️ Markdown to HTML Converter                    | ✅   | 2025-06-26   |
 | 12. | 🌍 REST Countries API Wrapper                    | ✅   | 2025-06-27   |
-| 13. | Currency Converter CLI                    | In Progress | 2025-06-28   |
+| 13. | 🪙 Currency Converter CLI                           | In Progress | 2025-06-28   |
 | 14. | Word Counter ***(FS module)***                    | In Progress | 2025-06-29   |
 | 15. | Simple Auth System ***(JWT + files)***                    | In Progress | 2025-06-30   |
 
