@@ -1,7 +1,9 @@
 # 🕸️ Markdown to HTML Converter
+
 A Node.js project that converts Markdown files to HTML documents. This tool is perfect for developers, technical writers, and content creators who want to transform their Markdown content into web-ready HTML with customizable templates and styling options.
 
 ## ✨ Features
+
 - Core Conversion: Convert standard Markdown syntax to clean HTML
 - File Processing: Process single files or entire directories
 - Template Support: Use custom HTML templates for consistent styling
@@ -14,6 +16,7 @@ A Node.js project that converts Markdown files to HTML documents. This tool is p
 - Table of Contents: Auto-generate TOC from headings
 
 ## 🚀 Future Enhancements
+
 - Plugin System: Allow extensions for custom markdown processors
 - Live Preview: Web server with live-reload for previewing changes
 - PDF Export: Add option to generate PDFs from the HTML output
@@ -26,6 +29,7 @@ A Node.js project that converts Markdown files to HTML documents. This tool is p
 - SEO Optimization: Add meta tags and other SEO enhancements
 
 ## Project Structure
+
 ```bash
 markdown-to-html/
 ├── bin/                 # CLI scripts
