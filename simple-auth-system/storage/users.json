@@ -1,0 +1,9 @@
+[
+  {
+    "id": "0cbd9333-d55b-4d77-8662-4800b31cbd21",
+    "username": "testuser",
+    "password": "$2b$10$HctqieAZ/epw/T4KZ.VyoeTRpmIPw06HQZALdaNrIeFh10L5zUDNm",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwY2JkOTMzMy1kNTViLTRkNzctODY2Mi00ODAwYjMxY2JkMjEiLCJpYXQiOjE3NTEyODM1MTEsImV4cCI6MTc1MTg4ODMxMX0.WLoz8zVtTRBOeAJwKkLM-xP8sNud0F7BEUIPAy91AXM",
+    "createdAt": "2025-06-30T11:37:56.270Z"
+  }
+]
