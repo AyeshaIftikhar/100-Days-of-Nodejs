@@ -1,0 +1,25 @@
+{
+  "name": "markdown-converter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "markdown",
+    "converter",
+    "cli",
+    "nodejs",
+    "markdown-to-html"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "A Node.js project that converts Markdown files to HTML documents. This tool is perfect for developers, technical writers, and content creators who want to transform their Markdown content into web-ready HTML with customizable templates and styling options.",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^14.0.0"
+  },
+  "bin": {
+    "md2html": "./bin/cli.js"
+  }
+}

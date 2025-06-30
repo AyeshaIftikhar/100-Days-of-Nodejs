@@ -3,24 +3,26 @@
 A curated list of 100 Node.js projects to master backend development, APIs, DevOps, and more. Perfect for building your portfolio, learning by doing, or preparing for interviews!
 
 ## Table of Contents
+
 - [Beginner Projects (1-30)](#beginner-projects-1-30)
 - [Intermediate Projects (31-70)](#intermediate-projects-31-70)
 - [Advanced Projects (71-100)](#advanced-projects-71-100)
 - [How to Use This List](#how-to-use-this-list)
 - [Contributing](#contributing)
 
-
 ## 🚀 Step 1: Set Up Your System
+
 - Install [Node.js](https://nodejs.org/en) (LTS version).
 - Use [VS Code](http://code.visualstudio.com/) (with extensions like __ESLint__, __Prettier__).
 - Version control with __Git/GitHub__.
 - Optional: Use [Postman](https://www.postman.com/) for API testing.
 
-
 ## 📌 Step 2: Project Roadmap (Beginner → Advanced)
 
 ### 🔹 Level 1: Core Node.js (Projects 1-30)
+
 _Focus_: Core Node.Js, CLI Tools, Basic APIs
+
 1. Hello World Server (Basic HTTP server)
 2. File Organizer CLI (Sort files by extension)
 3. Weather CLI Tool (Fetch API + axios)
@@ -53,7 +55,9 @@ _Focus_: Core Node.Js, CLI Tools, Basic APIs
 30. Simple Web Scraper (Cheerio)
 
 ### 🔹 Level 2: Databases & APIs (Projects 21-50)
+
 _Focus_: Database, APIs, Integrations, Authentications
+
 31. MongoDB CRUD API
 32. Redis Caching Layer
 33. JWT Auth API (Express + MongoDB)
@@ -96,7 +100,9 @@ _Focus_: Database, APIs, Integrations, Authentications
 70. CLI SQL Query Runner
 
 ### 🔹 Level 3: Advanced Backend (Projects 51-80)
+
 _Focus_: Microservices, DevOps, Scalability, AI
+
 71. Microservices Auth System
 72. Kubernetes-Deployed API
 73. Serverless CRUD API (DynamoDB)
@@ -128,7 +134,6 @@ _Focus_: Microservices, DevOps, Scalability, AI
 99. Serverless Webhooks
 100. Open-Source Contribution (Fix a Node.js lib issue)
 
-
 ## ⚡ Step 3: Execution Strategy
 
 ✅ 1 Project Per Day (15-60 mins)
@@ -138,6 +143,7 @@ _Focus_: Microservices, DevOps, Scalability, AI
 ✅ Complexity Gradient: Every 10 projects, increase difficulty.
 
 ## 🔖 Bonus: Monetization Ideas
+
 - Sell Project Templates: Bundle projects 50-100 as "Node.js Starter Kits" (Gumroad).
 - Freelancing: Offer to build custom APIs (use projects 30+ as proof).
 - YouTube: Record a "100 Node.js Projects" series (affiliate links in description).
