@@ -1,6 +1,6 @@
 # File Organizer CLI 📂
 
-[File Organizer](https://youtu.be/2rWIFAVyfB8)
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/2rWIFAVyfB8/0.jpg)](http://www.youtube.com/watch?v=2rWIFAVyfB8)
 
 A Node.js command-line tool to automatically organize files in a directory by extension (e.g., `.jpg` → `/images`, `.pdf` → `/documents`).
 

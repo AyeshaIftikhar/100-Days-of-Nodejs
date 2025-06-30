@@ -1,6 +1,8 @@
 # Currency Converter CLI
 A command-line currency converter that uses real-time exchange rates from a reliable API.
 
+![Currency Converter CLI](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/currency-converter-cli.png)
+
 ## Features
 - Real-time currency conversion
 - Support for 170+ currencies
@@ -8,6 +10,9 @@ A command-line currency converter that uses real-time exchange rates from a reli
 - Interactive mode
 - Bulk conversion
 - Colorful output
+- Convert Portfolio
+- Show Rate History
+- Set Rate Alert
 
 ## API Key Setup
 - Get a free API key from ExchangeRate-API
