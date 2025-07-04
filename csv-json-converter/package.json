@@ -1,0 +1,29 @@
+{
+  "name": "csv-json-converter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "csv",
+    "json",
+    "converter",
+    "cli",
+    "nodejs",
+    "javascript",
+    "utility",
+    "parsing",
+    "stringifying"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "A simple utility for converting CSV files to JSON format and vice versa. This tool supports various CSV formats and provides options for parsing and stringifying CSV data.",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^14.0.0",
+    "csv-parse": "^5.6.0",
+    "csv-parser": "^3.2.0",
+    "csv-stringify": "^6.5.2"
+  }
+}

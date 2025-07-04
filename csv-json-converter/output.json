@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "age": 28,
+    "is_active": true,
+    "balance": 1250.5,
+    "join_date": "2020-05-15"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "age": 34,
+    "is_active": false,
+    "balance": 3420.75,
+    "join_date": "2019-11-22"
+  },
+  {
+    "id": 3,
+    "name": "Bob Johnson",
+    "age": 45,
+    "is_active": true,
+    "balance": 500,
+    "join_date": "2021-02-10"
+  },
+  {
+    "id": 4,
+    "name": "Alice Brown",
+    "age": 23,
+    "is_active": false,
+    "balance": 780.3,
+    "join_date": "2022-01-05"
+  },
+  {
+    "id": 5,
+    "name": "Charlie Wilson",
+    "age": 52,
+    "is_active": true,
+    "balance": 15000,
+    "join_date": "2018-07-30"
+  }
+]
