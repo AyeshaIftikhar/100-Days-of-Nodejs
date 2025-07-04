@@ -1,0 +1,21 @@
+{
+  "name": "system-info-logger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "system",
+    "info",
+    "logger",
+    "nodejs",
+    "os"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "System information logger that uses Node.js's built-in os module to collect and log system statistics.",
+  "dependencies": {
+    "chalk": "^5.4.1"
+  }
+}

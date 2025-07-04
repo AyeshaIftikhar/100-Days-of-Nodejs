@@ -3,21 +3,13 @@
 Todo API implementation that uses in-memory storage instead of a database, perfect for testing and small projects.
 
 ## Features
+
 - RESTful API endpoints
 - In-memory data storage
 - Data persistence via JSON file
 - Input validation
 - Error handling
 - Sorting and filtering
-
-## Key Features
-
-- Data Persistence: Automatically saves to todos.json
-- Validation: Ensures todos have titles
-- Sorting: Sort by creation date or title
-- Filtering: Filter by completion status
-- Atomic Operations: Toggle completion with PATCH
-- Bulk Delete: Remove all completed todos at once
 
 ## API Endpoints:
 
@@ -86,6 +78,15 @@ curl -X PATCH http://localhost:3000/api/todos/1/toggle
 # Delete a todo
 curl -X DELETE http://localhost:3000/api/todos/1
 ```
+
+## Key Features
+
+- Data Persistence: Automatically saves to todos.json
+- Validation: Ensures todos have titles
+- Sorting: Sort by creation date or title
+- Filtering: Filter by completion status
+- Atomic Operations: Toggle completion with PATCH
+- Bulk Delete: Remove all completed todos at once
 
 ## Future Enhancements
 
