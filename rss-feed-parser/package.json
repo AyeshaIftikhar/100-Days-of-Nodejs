@@ -1,0 +1,32 @@
+{
+  "name": "rss-feed-parser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rss",
+    "feed",
+    "parser",
+    "cli",
+    "nodejs",
+    "javascript",
+    "syndication",
+    "atom",
+    "xml",
+    "json"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "An RSS Feed (Really Simple Syndication) is a standardized format used to distribute and receive regularly updated content from websites, such as news articles, blog posts, or podcasts.",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "chalk": "^5.4.1",
+    "cheerio": "^1.1.0",
+    "cli-table3": "^0.6.5",
+    "commander": "^14.0.0",
+    "feedparser": "^2.2.10",
+    "node-cache": "^5.1.2"
+  }
+}
