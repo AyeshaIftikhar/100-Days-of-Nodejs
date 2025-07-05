@@ -1,0 +1,47 @@
+Sample Document with Email Addresses
+
+Contact Information:
+-------------------
+John Doe - john.doe@example.com (Work)
+Jane Smith - jane.smith+test@example.org (Personal)
+Support Team - support@company.com
+Invalid Emails:
+not-an-email
+missing@domain
+@missing-local.com
+extra@dot@domain.com
+
+Code Snippet:
+------------
+// User registration
+const user = {
+  email: "user@domain.net",
+  username: "test_user"
+}
+
+HTML Example:
+------------
+<a href="mailto:sales@company.com">Contact Sales</a>
+<a href="mailto:info@company.com?subject=Inquiry">Info</a>
+
+Quoted Emails:
+--------------
+"quoted.email@example.com"
+'another.quote@example.org'
+
+Special Characters:
+------------------
+unicode-user@exämple.com
+user+filter@gmail.com
+user.name@sub.domain.co.uk
+
+Long Text:
+---------
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Nulla euismod contact@lorem-ipsum.com velit non purus 
+ultrices, vitae tempus nunc tempus. 
+
+More emails embedded in text:
+- first.last@international.tld
+- "quoted@email.org"
+- mixed123@numbers456.domain

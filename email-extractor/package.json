@@ -1,0 +1,23 @@
+{
+  "name": "email-extractor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "email",
+    "extractor",
+    "regex",
+    "tool",
+    "utility",
+    "fs"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "Email extractor that scans files and directories for email addresses using regular expressions and the file system module.",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^14.0.0"
+  }
+}

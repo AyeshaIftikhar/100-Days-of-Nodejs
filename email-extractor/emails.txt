@@ -1,0 +1,15 @@
+'another.quote@example.org
+contact@lorem-ipsum.com
+dot@domain.com
+first.last@international.tld
+info@company.com
+jane.smith+test@example.org
+john.doe@example.com
+mixed123@numbers456.domain
+quoted.email@example.com
+quoted@email.org
+sales@company.com
+support@company.com
+user+filter@gmail.com
+user.name@sub.domain.co.uk
+user@domain.net

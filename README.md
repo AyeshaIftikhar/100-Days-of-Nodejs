@@ -26,9 +26,11 @@ npm init -y
 
 ## Project Catelogue
 
+### 🔹 Level 1: Core Node.js
+
 | Sr. | Project Name                                      | Status | Last Updated | Architecture/Type    | Main Design Patterns Uses                                                 |
 | --- | ------------------------------------------------- | ------ | ------------ | -------------------- | ------------------------------------------------------------------------- |
-| 1.  | 🤝🏻 hello-world-server                             | ✅     | 2025-06-16   | Minimal HTTP Server  | Singleton (server instance), Separation of Concerns                       |
+| 1.  | 🤝🏻 hello-world-server                           | ✅     | 2025-06-16   | Minimal HTTP Server  | Singleton (server instance), Separation of Concerns                       |
 | 2.  | 📂 file-organizer-cli                             | ✅     | 2025-06-17   | CLI Modular          | Command Pattern, Single Responsibility                                    |
 | 3.  | ☁️ weather-cli                                    | ✅     | 2025-06-18   | CLI Modular          | Command Pattern, Adapter (for API), Separation of Concerns                |
 | 4.  | 📙 Note Taking App **_(FS Module CURD)_**         | ✅     | 2025-06-19   | CLI/REST, File-based | Repository Pattern, Command Pattern, Separation of Concerns               |
@@ -43,3 +45,13 @@ npm init -y
 | 13. | 🪙 Currency Converter CLI                         | ✅     | 2025-06-28   | CLI Modular          | Command Pattern, Strategy (for conversion logic), Separation of Concerns  |
 | 14. | 📑 Word Counter **_(FS module)_**                 | ✅     | 2025-06-29   | CLI Modular          | Command Pattern, Single Responsibility                                    |
 | 15. | 🔐 Simple Auth System **_(JWT + files)_**         | ✅     | 2025-06-30   | REST API (Express)   | MVC Pattern, Service Layer, Repository Pattern, JWT Auth Pattern          |
+| 16. | 📉 RSS Feed Parser                                | ✅     | 2025-07-01   | CLI Modular          | Command Pattern, Adapter (for RSS parsing), Separation of Concerns        |
+| 17. | 🗃️ CSV to JSON Converter                          | ✅     | 2025-07-02   | CLI Modular          | Command Pattern, Adapter (for CSV parsing), Single Responsibility         |
+| 18. | ☑️ Todo API **_(No DB)_**                         | ✅     | 2025-07-03   | REST API (Express)   | MVC Pattern, Router Pattern, In-memory Repository Pattern                 |
+| 19. | 🚨 System Info Logger **_(OS module)_**           | ✅     | 2025-07-04   | CLI Modular          | Command Pattern, Adapter (for OS module), Single Responsibility           |
+| 20. | 📧 Email Extractor **_(Regex + FS)_**             | ✅     | 2025-07-05   | CLI Modular          | Command Pattern, Adapter (Regex/File), Single Responsibility              |
+| 21. | 🙀 GitHub Profile Fetcher **_(GitHub API)_**      | 🔄     | 2025-07-06   |                      |                                                                           |
+| 22. | Palindrome Checker API                            | 🔄     | 2025-07-07   |                      |                                                                           |
+| 23. | Base64 Encoder/Decoder                            | 🔄     | 2025-07-08   |                      |                                                                           |
+| 24. | File Uploader **_(Multipart forms)_**             | 🔄     | 2025-07-09   |                      |                                                                           |
+| 25. | Static File Server                                | 🔄     | 2025-07-10   |                      |                                                                           |

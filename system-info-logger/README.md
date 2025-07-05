@@ -1,4 +1,4 @@
-# System Info Logger
+# System Info Logger _(OS Module)_
 
 ![System Info Logger](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/output/screenshots/system-info-logger.png)
 

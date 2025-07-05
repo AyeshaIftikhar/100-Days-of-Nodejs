@@ -54,7 +54,7 @@ _Focus_: Core Node.Js, CLI Tools, Basic APIs
 29. Lorem Ipsum Generator
 30. Simple Web Scraper (Cheerio)
 
-### 🔹 Level 2: Databases & APIs (Projects 21-50)
+### 🔹 Level 2: Databases & APIs (Projects 31-70)
 
 _Focus_: Database, APIs, Integrations, Authentications
 
@@ -99,7 +99,7 @@ _Focus_: Database, APIs, Integrations, Authentications
 69. ETL Pipeline (CSV → DB)
 70. CLI SQL Query Runner
 
-### 🔹 Level 3: Advanced Backend (Projects 51-80)
+### 🔹 Level 3: Advanced Backend (Projects 71-100)
 
 _Focus_: Microservices, DevOps, Scalability, AI
 
