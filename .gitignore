@@ -30,3 +30,6 @@ package-lock.json
 
 # config/
 PUBLISH-PACKAGE-TO-NPM.md
+
+key.pem
+cert.pem

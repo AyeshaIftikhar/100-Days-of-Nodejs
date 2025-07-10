@@ -1,0 +1,26 @@
+{
+  "name": "static-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "static",
+    "server",
+    "http",
+    "nodejs"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "A simple static file server",
+   "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
