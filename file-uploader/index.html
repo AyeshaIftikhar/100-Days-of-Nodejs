@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Single File Upload</h2>
+    <form
+      action="http://localhost:3000/api/upload/single"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="file" />
+      <button type="submit">Upload</button>
+    </form>
+
+    <h2>Multiple Files Upload</h2>
+    <form
+      action="http://localhost:3000/api/upload/multiple"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="files" multiple />
+      <button type="submit">Upload</button>
+    </form>
+
+    <div id="progress">Progress: 0%</div>
+
+    <script>
+      // Progress tracking example
+      const forms = document.querySelectorAll("form");
+
+      forms.forEach((form) => {
+        form.addEventListener("submit", (e) => {
+          const progressElement = document.getElementById("progress");
+          const interval = setInterval(async () => {
+            const response = await fetch(
+              "http://localhost:3000/api/upload/progress"
+            );
+            const data = await response.json();
+            progressElement.textContent = `Progress: ${data.progress}%`;
+            if (data.progress >= 100) clearInterval(interval);
+          }, 500);
+        });
+      });
+    </script>
+  </body>
+</html>
