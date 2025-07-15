@@ -11,3 +11,16 @@ This project is useful for debugging, auditing, and monitoring HTTP traffic in s
 - Outputs logs in readable format to the console
 - Tracks performance (latency per request)
 - Middleware-based plug & play module for Express.js
+
+## 🚀 Future Enhancements
+
+| Feature                          | Description |
+|----------------------------------|-------------|
+| 🔒 Mask sensitive fields         | Hide passwords, tokens, etc. from logs |
+| 🧾 JSON-formatted logs           | Make logs machine-readable (e.g., for ELK stack) |
+| 📦 Package as npm module         | Allow reusability via `npm install http-logger` |
+| 📡 Send logs to external service | e.g., Datadog, Loggly, or AWS CloudWatch |
+| 🌐 IP and user-agent logging     | Capture client info for analytics |
+| 🔥 Error-specific logging        | Highlight requests that failed (4xx/5xx) |
+| 📊 Log rotation & archiving      | Archive logs periodically to avoid file bloat |
+| 📁 Middleware toggle             | Enable/disable logging based on environment |

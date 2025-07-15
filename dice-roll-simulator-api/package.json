@@ -1,0 +1,25 @@
+{
+  "name": "dice-roll-simulator-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dice",
+    "roll",
+    "simulator",
+    "api",
+    "express",
+    "nodejs",
+    "random",
+    "games",
+    "simulation"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "The Dice Roll Simulator API is a simple RESTful service built using Node.js and Express.js that simulates rolling one or more dice. It returns random values for each roll, supports different dice types (e.g., d6, d20), and allows for multiple dice in one request.",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
