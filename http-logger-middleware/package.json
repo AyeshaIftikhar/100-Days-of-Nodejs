@@ -1,0 +1,24 @@
+{
+  "name": "http-logger-middleware",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "http",
+    "logger",
+    "middleware",
+    "express",
+    "nodejs",
+    "logging",
+    "performance",
+    "debugging"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "http-logger-middleware is a simple and extensible middleware module for Node.js (Express.js framework) that logs incoming HTTP requests. It captures useful data such as method, endpoint, status code, response time, and timestamp, and logs it to both the console and a log file.",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
