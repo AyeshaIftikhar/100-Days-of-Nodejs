@@ -1,5 +1,7 @@
 # 100 Days of Node.JS
 
+![100DaysofNodeJs](https://github.com/AyeshaIftikhar/100-Days-of-Nodejs/blob/main/100daysofnodejs.png)
+
 **_Goal:_** Build 100 Node.js projects to master backend development.
 
 <p>
