@@ -1,0 +1,25 @@
+{
+  "title": "JavaScript Basics",
+  "description": "Test your JavaScript knowledge",
+  "questions": [
+    {
+      "type": "multiple",
+      "question": "Which keyword declares a variable in JavaScript?",
+      "options": ["var", "let", "const", "all of the above"],
+      "answer": 3,
+      "timeLimit": 15
+    },
+    {
+      "type": "boolean",
+      "question": "JavaScript is the same as Java.",
+      "answer": false,
+      "timeLimit": 10
+    },
+    {
+      "type": "short",
+      "question": "What does DOM stand for?",
+      "answer": "Document Object Model",
+      "timeLimit": 20
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "quiz-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "quiz",
+    "cli",
+    "nodejs",
+    "readline",
+    "interactive",
+    "command-line",
+    "application"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "A command-line quiz application using Node.js's built-in readline module for interactive input.",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  },
+  "bin": {
+    "quiz-cli": "./index.js"
+  }
+}
