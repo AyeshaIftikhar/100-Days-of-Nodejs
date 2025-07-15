@@ -2,12 +2,12 @@
 
 **_Goal:_** Build 100 Node.js projects to master backend development.
 
+<p>
 <a href="https://www.linkedin.com/in/seayeshaiftikhar/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Linkedin" height="30" width="40" /></a>
 <a href="https://web.facebook.com/ayeshaifitikharofficial/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Facebook" height="30" width="40" /></a>
 <a href="https://www.youtube.com/channel/UCUI0fN6xPUT3SfGLfh8B9Lg" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="Youtube" height="30" width="40" /></a>
 <a href="https://whatsapp.com/channel/0029VaCZPbjGJP8EQY19Xz1v" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/whatsapp.svg" alt="Whatsapp" height="30" width="40" /></a>
 <a href="https://www.instagram.com/aishayyy____" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram" height="30" width="40" /></a>
-
 </p>
 
 ## 🎯 Rules
@@ -105,3 +105,15 @@ _Focus_: Core Node.Js, CLI Tools, Basic APIs
 - **MVC (API):** Model-View-Controller, typical for REST APIs.
 - **Express Middleware:** Custom middleware for Express apps.
 - **Strategy Pattern:** For selecting text generation logic.
+
+### 🔹 Level 2: Databases & APIs (Projects 31-70)
+
+_Focus_: Database, APIs, Integrations, Authentications
+
+| Sr. | Project Name                         | Status | Last Updated | Architecture Type | Design Pattrens Used |
+| --- | ------------------------------------ | ------ | ------------ | ----------------- | -------------------- |
+| 31. | MongoDB CRUD API                     | 🔄     | 16-07-2025   |                   |                      |
+| 32. | Redis Caching Layer                  | 🔄     | 17-07-2025   |                   |                      |
+| 33. | JWT Auth API _(Express + MongoDB)_   | 🔄     | 18-07-2025   |                   |                      |
+| 34. | OAuth Login _(Google/GitHub)_        | 🔄     | 19-07-2025   |                   |                      |
+| 35. | RESTful Blog API _(Express + MySQL)_ | 🔄     | 20-07-2025   |                   |                      |
