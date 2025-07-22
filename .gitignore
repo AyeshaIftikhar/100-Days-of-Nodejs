@@ -33,3 +33,5 @@ PUBLISH-PACKAGE-TO-NPM.md
 
 key.pem
 cert.pem
+
+level-02/.database
