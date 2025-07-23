@@ -1,0 +1,32 @@
+// create post
+mutation {
+  createPost(input: {
+    title: "First Post",
+    content: "This is my first post"
+  }) {
+    id
+    title
+    content
+    author {
+      username
+    }
+  }
+}
+
+/// get post with comments
+query {
+  posts {
+    id
+    title
+    author {
+      username
+    }
+    comments {
+      content
+      author {
+        username
+      }
+    }
+  }
+}
+///
