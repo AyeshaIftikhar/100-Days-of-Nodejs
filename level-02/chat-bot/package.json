@@ -1,0 +1,22 @@
+{
+  "name": "chat-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "This project implements a dual-purpose bot that can integrate with both Slack and Discord platforms. It handles messages, commands, and interactions while maintaining a consistent feature set across both platforms.",
+  "dependencies": {
+    "@slack/bolt": "^4.4.0",
+    "axios": "^1.11.0",
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.2.0",
+    "mongoose": "^8.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

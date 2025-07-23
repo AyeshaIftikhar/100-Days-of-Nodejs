@@ -12,6 +12,14 @@
 <a href="https://www.instagram.com/aishayyy____" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram" height="30" width="40" /></a>
 </p>
 
+## Table of Contents
+
+- [Beginner Projects (1-30)](#beginner-projects-1-30)
+- [Intermediate Projects (31-70)](#intermediate-projects-31-70)
+- [Advanced Projects (71-100)](#advanced-projects-71-100)
+- [How to Use This List](#how-to-use-this-list)
+- [Contributing](#contributing)
+
 ## 🎯 Rules
 
 - **1 Project Per Day** (15-60 mins)
@@ -112,10 +120,97 @@ _Focus_: Core Node.Js, CLI Tools, Basic APIs
 
 _Focus_: Database, APIs, Integrations, Authentications
 
-| Sr. | Project Name                         | Status | Last Updated | Architecture Type | Design Pattrens Used |
-| --- | ------------------------------------ | ------ | ------------ | ----------------- | -------------------- |
-| 31. | MongoDB CRUD API                     | 🔄     | 16-07-2025   |                   |                      |
-| 32. | Redis Caching Layer                  | 🔄     | 17-07-2025   |                   |                      |
-| 33. | JWT Auth API _(Express + MongoDB)_   | 🔄     | 18-07-2025   |                   |                      |
-| 34. | OAuth Login _(Google/GitHub)_        | 🔄     | 19-07-2025   |                   |                      |
-| 35. | RESTful Blog API _(Express + MySQL)_ | 🔄     | 20-07-2025   |                   |                      |
+| Sr. | Project Name                               | Status | Last Updated |
+| --- | ------------------------------------------ | ------ | ------------ |
+| 31. | MongoDB CRUD API                           | ✅     | 16-07-2025   |
+| 32. | Redis Caching Layer                        | ✅     | 17-07-2025   |
+| 33. | JWT Auth API _(Express + MongoDB)_         | ✅     | 18-07-2025   |
+| 34. | OAuth Login _(Google/GitHub)_              | ✅     | 19-07-2025   |
+| 35. | RESTful Blog API _(Express + MySQL)_       | ✅     | 20-07-2025   |
+| 36. | GraphQL API _(Apollo Server)_              | ✅     | 21-07-2025   |
+| 37. | Webhook Listener _(Ngrok)_                 | ✅     | 22-07-2025   |
+| 38. | Slack/Discord Bot                          | ✅     | 23-05-2025   |
+| 39. | Automated Email Sender _(Nodemailer)_      | 🔄     | 24-05-2025   |
+| 40. | PDF Generator API _(PDFKit)_               | 🔄     | 25-07-2025   |
+| 41. | PWeb Scraper with Storage _(Cheerio + DB)_ | 🔄     |              |
+| 42. | Rate-Limited API _(Redis)_                 | 🔄     |              |
+| 43. | Real-Time Chat _(Socket.io)_               | 🔄     |              |
+| 44. | File Encryption Tool _(Crypto module)_     | 🔄     |              |
+| 45. | CLI Twitter Client _(Twitter API)_         | 🔄     |              |
+| 46. | Stock Price Fetcher _(Alpha Vantage API)_  | 🔄     |              |
+| 47. | Dockerized Node App                        | 🔄     |              |
+| 48. | Load-Testing Tool _(Artillery)_            | 🔄     |              |
+| 49. | Serverless Function _(AWS Lambda/Vercel)_  | 🔄     |              |
+| 50. | QR Code Generator API                      | 🔄     |              |
+| 51. | Headless CMS _(Strapi/Sanity clone)_       | 🔄     |              |
+| 52. | Automated Backup Script _(AWS S3)_         | 🔄     |              |
+| 53. | WebSocket Game _(Tic-Tac-Toe)_             | 🔄     |              |
+| 54. | REST API with Swagger Docs                 | 🔄     |              |
+| 55. | YouTube Downloader _(ytdl-core)_           | 🔄     |              |
+| 56. | Job Queue _(Bull + Redis)_                 | 🔄     |              |
+| 57. | PDF Invoice Generator                      | 🔄     |              |
+| 58. | Geolocation API _(IP lookup)_              | 🔄     |              |
+| 59. | CLI Password Manager _(Encrypted)_         | 🔄     |              |
+| 60. | Memcached Integration                      | 🔄     |              |
+| 61. | GraphQL Subscription API                   | 🔄     |              |
+| 62. | OTP Service _(Twilio)_                     | 🔄     |              |
+| 63. | Markdown Blog Engine                       | 🔄     |              |
+| 64. | Server-Sent Events _(SSE)_ Demo            | 🔄     |              |
+| 65. | REST API with Rate Limiting                | 🔄     |              |
+| 66. | CLI GitHub Backup Tool                     | 🔄     |              |
+| 67. | Automated Screenshot Service _(Puppeteer)_ | 🔄     |              |
+| 68. | WebRTC Signaling Server                    | 🔄     |              |
+| 69. | ETL Pipeline _(CSV → DB)_                  | 🔄     |              |
+| 70. | CLI SQL Query Runner                       | 🔄     |              |
+
+### 🔹 Level 3: Advanced Backend (Projects 71-100)
+
+_Focus_: Microservices, DevOps, Scalability, AI
+
+| Sr.  | Project Name                                       | Status | Last Updated |
+| ---- | -------------------------------------------------- | ------ | ------------ |
+| 71.  | Microservices Auth System                          | 🔄     |              |
+| 22.  | Kubernetes-Deployed API                            | 🔄     |              |
+| 73.  | Serverless CRUD API (DynamoDB)                     | 🔄     |              |
+| 74.  | Elasticsearch Integration                          | 🔄     |              |
+| 75.  | Distributed Task Scheduler                         | 🔄     |              |
+| 76.  | AI Text Summarizer (OpenAI API)                    | 🔄     |              |
+| 77.  | Blockchain Explorer API                            | 🔄     |              |
+| 78.  | Real-Time Analytics Dashboard                      | 🔄     |              |
+| 79.  | Payment Gateway Integration (Stripe)               | 🔄     |              |
+| 80.  | Multiplayer Game Server                            | 🔄     |              |
+| 81.  | CI/CD Pipeline (GitHub Actions)                    | 🔄     |              |
+| 82.  | Logging System (ELK Stack)                         | 🔄     |              |
+| 83.  | Feature Flag Service                               | 🔄     |              |
+| 84.  | GraphQL Federation                                 | 🔄     |              |
+| 85.  | Server-Side Rendering (SSR) App                    | 🔄     |              |
+| 86.  | IoT Data Ingestion API                             | 🔄     |              |
+| 87.  | AI Chatbot Backend                                 | 🔄     |              |
+| 88.  | Video Streaming API (HLS)                          | 🔄     |              |
+| 89.  | Distributed Cache                                  | 🔄     |              |
+| 90.  | API Gateway (Kong/Tyk)                             | 🔄     |              |
+| 91.  | Automated Testing Framework                        | 🔄     |              |
+| 92.  | WebAssembly-Powered API                            | 🔄     |              |
+| 93.  | Chaos Engineering Tool                             | 🔄     |              |
+| 94.  | ML Model Serving API (TensorFlow.js)               | 🔄     |              |
+| 95.  | Database Sharding Demo                             | 🔄     |              |
+| 96.  | Real-Time Collaborative Editor                     | 🔄     |              |
+| 97.  | Low-Code API Builder                               | 🔄     |              |
+| 98.  | Auth0 Clone                                        | 🔄     |              |
+| 99.  | Serverless Webhooks                                | 🔄     |              |
+| 100. | Open-Source Contribution (Fix a Node.js lib issue) | 🔄     |              |
+
+## ⚡ Step 3: Execution Strategy
+
+✅ 1 Project Per Day (15-60 mins)
+✅ Document Every Project (GitHub README with screenshots)
+✅ Post Progress on LinkedIn/Instagram (Use #100DaysOfNodeJS)
+✅ Monetize After 50 Projects (Freelancing, templates, coaching)
+✅ Complexity Gradient: Every 10 projects, increase difficulty.
+
+## 🔖 Bonus: Monetization Ideas
+
+- Sell Project Templates: Bundle projects 50-100 as "Node.js Starter Kits" (Gumroad).
+- Freelancing: Offer to build custom APIs (use projects 30+ as proof).
+- YouTube: Record a "100 Node.js Projects" series (affiliate links in description).
+- Sponsorships: Partner with hosting tools (e.g., "This project uses Railway").
