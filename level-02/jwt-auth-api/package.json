@@ -1,14 +1,22 @@
 {
   "name": "jwt-auth-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "jwt",
+    "authentication",
+    "express",
+    "mongodb",
+    "nodejs"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
   "license": "ISC",
-  "description": "",
+  "description": "This project implements a secure JWT (JSON Web Token) authentication system using Node.js, Express, and MongoDB. It provides user registration, login, protected routes, and token management features.",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
@@ -18,5 +26,8 @@
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
