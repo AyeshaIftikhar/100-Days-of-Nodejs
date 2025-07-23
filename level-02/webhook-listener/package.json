@@ -1,0 +1,22 @@
+{
+  "name": "webhook-listener",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "This project implements a webhook listener that can receive and process incoming webhook events from various services. It uses Ngrok to expose your local development server to the internet, allowing you to test webhooks without deploying your application.",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "ngrok": "^5.0.0-beta.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
