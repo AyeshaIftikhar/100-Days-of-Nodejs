@@ -1,0 +1,23 @@
+{
+  "name": "email-sender",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "This project implements an automated email sending system using Node.js and Nodemailer. It supports templated emails, scheduled sending, and integrates with popular email providers.",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "handlebars": "^4.7.8",
+    "mongoose": "^8.16.4",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
