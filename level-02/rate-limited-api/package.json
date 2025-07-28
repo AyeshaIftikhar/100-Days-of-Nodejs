@@ -1,0 +1,23 @@
+{
+  "name": "rate-limited-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "This project implements a robust rate-limiting system for Node.js APIs using Redis as the storage backend. It provides middleware to limit requests based on IP, user ID, or API keys, with customizable time windows and request limits.",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.16.5",
+    "redis": "^5.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
