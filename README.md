@@ -133,10 +133,10 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 39. | Automated Email Sender _(Nodemailer)_      | ✅     | 24-05-2025   |
 | 40. | PDF Generator API _(PDFKit)_               | ✅     | 25-07-2025   |
 | 41. | PWeb Scraper with Storage _(Cheerio + DB)_ | ✅     | 26-07-2025   |
-| 42. | Rate-Limited API _(Redis)_                 | 🔄     |              |
-| 43. | Real-Time Chat _(Socket.io)_               | 🔄     |              |
-| 44. | File Encryption Tool _(Crypto module)_     | 🔄     |              |
-| 45. | CLI Twitter Client _(Twitter API)_         | 🔄     |              |
+| 42. | Rate-Limited API _(Redis)_                 | ✅     | 27-07-2025   |
+| 43. | Real-Time Chat _(Socket.io)_               | ✅     | 28-07-2025   |
+| 44. | File Encryption Tool _(Crypto module)_     | ✅     | 29-07-2025   |
+| 45. | CLI Twitter Client _(Twitter API)_         | 🔄     | 30-07-2025   |
 | 46. | Stock Price Fetcher _(Alpha Vantage API)_  | 🔄     |              |
 | 47. | Dockerized Node App                        | 🔄     |              |
 | 48. | Load-Testing Tool _(Artillery)_            | 🔄     |              |
