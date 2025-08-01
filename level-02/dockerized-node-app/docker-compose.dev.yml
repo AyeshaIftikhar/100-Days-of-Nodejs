@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      target: builder
+    image: stock-price-fetcher-dev
+    container_name: stock-app-dev
+    command: npm run dev
+    ports:
+      - "${PORT}:3000"
+    environment:
+      - NODE_ENV=development
+      - ALPHA_VANTAGE_API_KEY=${ALPHA_VANTAGE_API_KEY}
+      - REDIS_HOST=redis
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - stock-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: stock-redis-dev
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - stock-network
+
+networks:
+  stock-network:
+    driver: bridge
+
+volumes:
+  redis_data:

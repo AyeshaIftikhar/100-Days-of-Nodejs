@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stock-price-fetcher
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: stock-price-fetcher
+  template:
+    metadata:
+      labels:
+        app: stock-price-fetcher
+    spec:
+      containers:
+      - name: stock-app
+        image: stock-price-fetcher:latest
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - secretRef:
+            name: stock-app-secrets
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+      - name: redis
+        image: redis:7-alpine
+        ports:
+        - containerPort: 6379
+        volumeMounts:
+        - name: redis-data
+          mountPath: /data
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
+      volumes:
+      - name: redis-data
+        emptyDir: {}

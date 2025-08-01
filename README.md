@@ -138,8 +138,8 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 44. | File Encryption Tool _(Crypto module)_     | ✅     | 29-07-2025   |
 | 45. | RSS Feed Reader                            | ✅     | 30-07-2025   |
 | 46. | Stock Price Fetcher _(Alpha Vantage API)_  | ✅     | 31-07-2025   |
-| 47. | Dockerized Node App                        | 🔄     | 01-08-2025   |
-| 48. | Load-Testing Tool _(Artillery)_            | 🔄     |              |
+| 47. | Dockerized Node App                        | ✅     | 01-08-2025   |
+| 48. | Load-Testing Tool _(Artillery)_            | 🔄     | 02-08-2025   |
 | 49. | Serverless Function _(AWS Lambda/Vercel)_  | 🔄     |              |
 | 50. | QR Code Generator API                      | 🔄     |              |
 | 51. | Headless CMS _(Strapi/Sanity clone)_       | 🔄     |              |
