@@ -1,0 +1,28 @@
+target: "https://api.production.com"
+phases:
+  - duration: 60
+    arrivalRate: 5
+    name: "Warm up"
+  - duration: 300
+    arrivalRate: 20
+    rampTo: 100
+    name: "Ramp up"
+  - duration: 600
+    arrivalRate: 100
+    name: "Sustained load"
+
+plugins:
+  metrics-by-endpoint: {}
+
+processor: "./scripts/setTestData.js"
+
+payload:
+  path: "./data/users.csv"
+  fields:
+    - "username"
+    - "password"
+  order: "random"
+
+variables:
+  apiVersion: "v1"
+  contentType: "application/json"

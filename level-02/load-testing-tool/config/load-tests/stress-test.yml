@@ -1,0 +1,45 @@
+config:
+  target: "{{ $processEnvironment.TARGET_URL }}"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+      name: Warm up
+    - duration: 300
+      arrivalRate: 20
+      rampTo: 100
+      name: Ramp up load
+    - duration: 600
+      arrivalRate: 100
+      name: Sustained load
+  plugins:
+    metrics-by-endpoint: {}
+  payload:
+    path: "./test-data.csv"
+    fields:
+      - "username"
+      - "password"
+    order: "random"
+
+scenarios:
+  - name: "Authenticate and fetch user profile"
+    flow:
+      - post:
+          url: "/api/login"
+          json:
+            username: "{{ username }}"
+            password: "{{ password }}"
+          capture:
+            json: "$.token"
+            as: "authToken"
+      - get:
+          url: "/api/profile"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+      - think: 5
+      - get:
+          url: "/api/products"
+      - post:
+          url: "/api/cart"
+          json:
+            productId: "123"
+            quantity: 1

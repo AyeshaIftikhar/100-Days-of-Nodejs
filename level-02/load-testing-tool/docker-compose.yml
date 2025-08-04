@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/loadtests
+      - TARGET_URL=${TARGET_URL}
+    depends_on:
+      - mongo
+    networks:
+      - loadtest-net
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - loadtest-net
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  mongo-data:
+
+networks:
+  loadtest-net:
+    driver: bridge

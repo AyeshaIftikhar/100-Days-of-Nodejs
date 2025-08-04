@@ -1,0 +1,40 @@
+{
+  "name": "load-testing-tool",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "Artillery is a modern, powerful load testing toolkit that allows you to test the performance of your applications, APIs, and services. ",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "jest --coverage",
+    "lint": "eslint .",
+    "load-test": "artillery run",
+    "report": "node scripts/generate-report.js",
+    "docker:build": "docker build -t load-testing-tool .",
+    "docker:run": "docker run -p 3000:3000 load-testing-tool"
+  },
+  "dependencies": {
+    "artillery": "^2.0.0",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fs-extra": "^11.2.0",
+    "helmet": "^7.1.0",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "jest": "^29.6.1",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  }
+}
