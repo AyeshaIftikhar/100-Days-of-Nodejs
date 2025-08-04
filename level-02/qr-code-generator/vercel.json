@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/handlers/vercel.handler.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/generate",
+      "methods": ["GET", "POST"],
+      "dest": "src/handlers/vercel.handler.js"
+    }
+  ]
+}

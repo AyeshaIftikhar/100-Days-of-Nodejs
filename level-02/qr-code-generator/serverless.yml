@@ -1,0 +1,26 @@
+service: qr-code-generator
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  memorySize: 512
+  timeout: 10
+  environment:
+    NODE_ENV: production
+
+functions:
+  generateQR:
+    handler: src/handlers/aws.handler.handler
+    events:
+      - http:
+          path: generate
+          method: get
+          cors: true
+      - http:
+          path: generate
+          method: post
+          cors: true
+
+plugins:
+  - serverless-offline
