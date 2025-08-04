@@ -1,0 +1,39 @@
+service: serverless-stock-fetcher
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    ALPHA_VANTAGE_API_KEY: ${env:ALPHA_VANTAGE_API_KEY}
+    CACHE_TTL: ${env:CACHE_TTL, 3600}
+    CACHE_TABLE: StockCache
+
+functions:
+  getQuote:
+    handler: src/handlers/aws.handler.handler
+    events:
+      - http:
+          path: quote
+          method: get
+          cors: true
+
+resources:
+  Resources:
+    StockCacheTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: StockCache
+        AttributeDefinitions:
+          - AttributeName: cacheKey
+            AttributeType: S
+        KeySchema:
+          - AttributeName: cacheKey
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TimeToLiveSpecification:
+          AttributeName: expiresAt
+          Enabled: true
+
+plugins:
+  - serverless-offline
