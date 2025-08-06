@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: headless-cms
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: headless-cms
+  template:
+    metadata:
+      labels:
+        app: headless-cms
+    spec:
+      containers:
+      - name: cms
+        image: your-registry/headless-cms:latest
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: cms-config
+        - secretRef:
+            name: cms-secrets
+        volumeMounts:
+        - name: uploads
+          mountPath: /app/public/uploads
+        - name: logs
+          mountPath: /app/logs
+      volumes:
+      - name: uploads
+        persistentVolumeClaim:
+          claimName: cms-uploads
+      - name: logs
+        emptyDir: {}

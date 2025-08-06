@@ -1,0 +1,12 @@
+{
+  "name": "headless-cms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "A Headless CMS is a content management system that provides backend-only content management, making content accessible via APIs for display on any device. Unlike traditional CMS platforms (like WordPress), it separates the content repository (the \"body\") from the presentation layer (the \"head\")"
+}
