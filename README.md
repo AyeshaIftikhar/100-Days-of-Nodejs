@@ -142,8 +142,8 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 48. | Load-Testing Tool _(Artillery)_            | ✅     | 02-08-2025   |
 | 49. | Serverless Function _(AWS Lambda/Vercel)_  | ✅     | 03-08-2025   |
 | 50. | QR Code Generator API                      | ✅     | 04-08-2025   |
-| 51. | Headless CMS _(Strapi/Sanity clone)_       | 🔄     | 05-08-2025   |
-| 52. | Automated Backup Script _(AWS S3)_         | 🔄     | 06-08-2025   |
+| 51. | Headless CMS _(Strapi/Sanity clone)_       | ✅     | 05-08-2025   |
+| 52. | Automated Backup Script _(AWS S3)_         | ✅     | 06-08-2025   |
 | 53. | WebSocket Game _(Tic-Tac-Toe)_             | 🔄     | 07-08-2025   |
 | 54. | REST API with Swagger Docs                 | 🔄     | 08-08-2025   |
 | 55. | YouTube Downloader _(ytdl-core)_           | 🔄     | 09-08-2025   |
