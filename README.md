@@ -145,7 +145,7 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 51. | Headless CMS _(Strapi/Sanity clone)_       | ✅     | 05-08-2025   |
 | 52. | Automated Backup Script _(AWS S3)_         | ✅     | 06-08-2025   |
 | 53. | WebSocket Game _(Tic-Tac-Toe)_             | ✅     | 07-08-2025   |
-| 54. | REST API with Swagger Docs                 | 🔄     | 08-08-2025   |
+| 54. | REST API with Swagger Docs                 | ✅     | 08-08-2025   |
 | 55. | YouTube Downloader _(ytdl-core)_           | 🔄     | 09-08-2025   |
 | 56. | Job Queue _(Bull + Redis)_                 | 🔄     | 10-08-2025   |
 | 57. | PDF Invoice Generator                      | 🔄     |              |

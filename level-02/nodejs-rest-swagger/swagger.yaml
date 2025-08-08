@@ -1,0 +1,218 @@
+openapi: 3.0.0
+info:
+  title: Node.js REST API with Swagger
+  version: 1.0.0
+  description: |
+    A sample REST API with Swagger documentation.
+    This API demonstrates CRUD operations for sample resources.
+  contact:
+    name: API Support
+    email: support@example.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:3000
+    description: Development server
+  - url: https://api.example.com
+    description: Production server
+
+tags:
+  - name: Samples
+    description: Operations about samples
+
+paths:
+  /api/samples:
+    get:
+      tags:
+        - Samples
+      summary: Get all samples
+      description: Returns a list of all samples
+      responses:
+        '200':
+          description: A JSON array of samples
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Sample'
+        '500':
+          description: Internal server error
+    post:
+      tags:
+        - Samples
+      summary: Create a new sample
+      description: Create a new sample record
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SampleInput'
+      responses:
+        '201':
+          description: Sample created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sample'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+  /api/samples/{id}:
+    get:
+      tags:
+        - Samples
+      summary: Get a sample by ID
+      description: Returns a single sample
+      parameters:
+        - name: id
+          in: path
+          description: ID of sample to return
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Sample found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sample'
+        '404':
+          description: Sample not found
+        '500':
+          description: Internal server error
+    put:
+      tags:
+        - Samples
+      summary: Update a sample
+      description: Update an existing sample
+      parameters:
+        - name: id
+          in: path
+          description: ID of sample to update
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SampleInput'
+      responses:
+        '200':
+          description: Sample updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sample'
+        '400':
+          description: Bad request
+        '404':
+          description: Sample not found
+        '500':
+          description: Internal server error
+    delete:
+      tags:
+        - Samples
+      summary: Delete a sample
+      description: Delete an existing sample
+      parameters:
+        - name: id
+          in: path
+          description: ID of sample to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Sample deleted successfully
+        '404':
+          description: Sample not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    Sample:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The auto-generated ID of the sample
+          example: 507f1f77bcf86cd799439011
+        name:
+          type: string
+          description: The sample name
+          example: Sample 1
+        description:
+          type: string
+          description: The sample description
+          example: This is a sample description
+        createdAt:
+          type: string
+          format: date-time
+          description: The date the sample was created
+          example: 2023-01-01T00:00:00Z
+        updatedAt:
+          type: string
+          format: date-time
+          description: The date the sample was last updated
+          example: 2023-01-01T00:00:00Z
+      required:
+        - id
+        - name
+        - description
+        - createdAt
+        - updatedAt
+
+    SampleInput:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The sample name
+          example: Sample 1
+        description:
+          type: string
+          description: The sample description
+          example: This is a sample description
+      required:
+        - name
+        - description
+
+  responses:
+    NotFoundError:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Sample not found
+
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Internal Server Error
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT authorization token
