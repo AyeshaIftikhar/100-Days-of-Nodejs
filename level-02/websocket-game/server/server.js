@@ -12,6 +12,8 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 // Start HTTP server
 const server = app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
+  console.log(`Visit http://localhost:${PORT} to access the game`);
+  console.log('Press Ctrl+C to stop the server');
 });
 
 // Create WebSocket server

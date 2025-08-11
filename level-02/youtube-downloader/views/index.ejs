@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>YouTube Downloader</h1>
+      <p>Download videos and audio from YouTube in high quality</p>
+    </header>
+
+    <main>
+      <form class="download-form" action="/download" method="POST">
+        <% if (message) { %>
+          <div class="message <%= message.includes('Error') ? 'error' : 'success' %>">
+            <%= message %>
+          </div>
+        <% } %>
+
+        <div class="input-group">
+          <input 
+            type="text" 
+            name="videoURL" 
+            placeholder="Paste YouTube link here..." 
+            required
+            value="<%= videoInfo ? 'https://youtu.be/' + videoInfo.videoId : '' %>"
+          >
+          <button type="submit">
+            <i class="fas fa-search"></i> Analyze
+          </button>
+        </div>
+      </form>
+
+      <% if (videoInfo) { %>
+        <div class="video-card">
+          <div class="thumbnail-container">
+            <img src="<%= videoInfo.thumbnail %>" alt="Video thumbnail">
+          </div>
+          <div class="video-info">
+            <h2><%= videoInfo.title %></h2>
+            <div class="download-options">
+              <a href="/download/mp4/<%= videoInfo.videoId %>" class="btn btn-primary">
+                <i class="fas fa-download"></i> Download Video (MP4)
+              </a>
+              <a href="/download/mp3/<%= videoInfo.videoId %>" class="btn btn-secondary">
+                <i class="fas fa-music"></i> Download Audio (MP3)
+              </a>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </main>
+
+    <footer class="footer">
+      <p>YouTube Downloader &copy; <%= new Date().getFullYear() %></p>
+    </footer>
+  </div>
+</body>
+</html>
