@@ -1,0 +1,25 @@
+{
+  "name": "job-queue-project",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "Job Queue with Bull and Redis",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "producer": "node src/producer.js",
+    "consumer": "node src/consumer.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "bull": "^4.16.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "redis": "^5.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
