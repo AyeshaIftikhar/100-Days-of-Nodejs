@@ -148,7 +148,7 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 54. | REST API with Swagger Docs                 | ✅     | 08-08-2025   |
 | 55. | YouTube Downloader _(ytdl-core)_           | ✅     | 09-08-2025   |
 | 56. | Job Queue _(Bull + Redis)_                 | ✅     | 10-08-2025   |
-| 57. | PDF Invoice Generator                      | 🔄     | 11-08-2025   |
+| 57. | PDF Invoice Generator                      | ✅     | 11-08-2025   |
 | 58. | Geolocation API _(IP lookup)_              | 🔄     | 12-08-2025   |
 | 59. | CLI Password Manager _(Encrypted)_         | 🔄     | 13-08-2025   |
 | 60. | Memcached Integration                      | 🔄     | 14-08-2025   |

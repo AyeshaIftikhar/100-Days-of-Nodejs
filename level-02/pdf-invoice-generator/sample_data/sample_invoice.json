@@ -1,0 +1,41 @@
+{
+  "company": {
+    "name": "Acme Widgets Pvt Ltd",
+    "address": "123 Business Street\nKarachi, Pakistan",
+    "logo_path": "templates/logo.png"
+  },
+  "customer": {
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "address": "456 Customer Lane\nLahore, Pakistan"
+  },
+  "invoice_number": "ACME-2025-002",
+  "date": "2025-08-11",
+  "due_date": "2025-08-25",
+  "currency_symbol": "PKR ",
+  "items": [
+    {
+      "name": "Design Work",
+      "description": "Branding and logo design",
+      "quantity": 1,
+      "unit_price": 15000,
+      "tax_rate": 13
+    },
+    {
+      "name": "Website Development",
+      "description": "3 pages responsive",
+      "quantity": 1,
+      "unit_price": 35000,
+      "tax_rate": 13
+    },
+    {
+      "name": "Maintenance (Monthly)",
+      "description": "Support and updates",
+      "quantity": 3,
+      "unit_price": 3000,
+      "tax_rate": 13
+    }
+  ],
+  "notes": "Thank you for your business. Payment via bank transfer to Account # 123456789 at XYZ Bank.",
+  "signature_text": "Authorized Signatory"
+}

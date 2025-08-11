@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Invoice {{invoice_number}}</title>
+  <style>
+    {{{css}}}
+  </style>
+</head>
+<body>
+  <header class="invoice-header">
+    <div class="company">
+      {{#if company.logo_base64}}
+        <img class="logo" src="{{company.logo_base64}}" alt="logo" />
+      {{else}}
+        <img class="logo" src="file://{{{logoPath}}}" alt="logo" />
+      {{/if}}
+      <div class="company-info">
+        <h1>{{company.name}}</h1>
+        <div class="muted">{{company.address}}</div>
+      </div>
+    </div>
+
+    <div class="invoice-meta">
+      <h2>Invoice</h2>
+      <div><strong>Number:</strong> {{invoice_number}}</div>
+      <div><strong>Date:</strong> {{formatDate date}}</div>
+      {{#if due_date}}<div><strong>Due:</strong> {{formatDate due_date}}</div>{{/if}}
+    </div>
+  </header>
+
+  <section class="bill-to">
+    <div>
+      <strong>Bill To:</strong>
+      <div class="muted">{{customer.name}}</div>
+      <div class="muted">{{customer.email}}</div>
+      <div class="muted">{{customer.address}}</div>
+    </div>
+  </section>
+
+  <main>
+    <table class="items">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Description</th>
+          <th class="r">Qty</th>
+          <th class="r">Unit</th>
+          <th class="r">Tax</th>
+          <th class="r">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each items}}
+        <tr>
+          <td class="item">{{this.name}}</td>
+          <td class="description">{{this.description}}</td>
+          <td class="r">{{this.quantity}}</td>
+          <td class="r">{{currency this.unit_price ../currency_symbol}}</td>
+          <td class="r">{{#if this.tax_rate}}{{this.tax_rate}}%{{else}}-{{/if}}</td>
+          <td class="r">{{currency (sumLine this.quantity this.unit_price this.tax_rate) ../currency_symbol}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <div class="totals">
+      <table>
+        <tr>
+          <td>Subtotal</td>
+          <td class="r">{{currency subtotal currency_symbol}}</td>
+        </tr>
+        <tr>
+          <td>Tax</td>
+          <td class="r">{{currency tax_total currency_symbol}}</td>
+        </tr>
+        <tr class="grand">
+          <td>Total</td>
+          <td class="r">{{currency total currency_symbol}}</td>
+        </tr>
+      </table>
+    </div>
+
+    {{#if notes}}
+    <section class="notes">
+      <h3>Notes</h3>
+      <p>{{notes}}</p>
+    </section>
+    {{/if}}
+  </main>
+
+  <footer>
+    <div class="muted">Generated: {{generated_at}}</div>
+  </footer>
+</body>
+</html>
