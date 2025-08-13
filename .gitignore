@@ -37,3 +37,4 @@ cert.pem
 level-02/.database
 
 .prompt
+.env
