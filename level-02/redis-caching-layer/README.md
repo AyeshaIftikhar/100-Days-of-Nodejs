@@ -100,3 +100,10 @@ The application follows a layered architecture:
 - Implement cache hit/miss monitoring
 - Consider Redis persistence options if cache durability is important
 
+
+```bash
+brew install redis
+brew services start redis
+redis-server // run manaually
+redis-cli ping // should return PONG
+```
