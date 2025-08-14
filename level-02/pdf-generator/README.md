@@ -75,38 +75,6 @@ POST /api/v1/pdf/templates
 }
 ```
 
-```
-pdf-generator/
-├── src/
-│   ├── config/
-│   │   └── pdfConfig.js
-│   ├── controllers/
-│   │   └── pdfController.js
-│   ├── generators/
-│   │   ├── invoiceGenerator.js
-│   │   ├── reportGenerator.js
-│   │   └── certificateGenerator.js
-│   ├── middleware/
-│   │   ├── auth.js
-│   │   └── validate.js
-│   ├── models/
-│   │   └── PdfTemplate.js
-│   ├── routes/
-│   │   └── pdfRoutes.js
-│   ├── templates/
-│   │   ├── fonts/
-│   │   ├── images/
-│   │   └── styles/
-│   ├── utils/
-│   │   ├── helpers.js
-│   │   └── logger.js
-│   └── app.js
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
-```
-
 ```bash
 npm install express pdfkit mongoose dotenv cors helmet
 npm install --save-dev nodemon
