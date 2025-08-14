@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jwt-key": "echo JWT_SECRET=$(node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\") > .env"
   },
   "keywords": [],
   "author": "Ayesha Iftikhar @ Aishayy",

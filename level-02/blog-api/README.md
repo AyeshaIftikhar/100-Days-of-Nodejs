@@ -106,42 +106,6 @@ CREATE TABLE comments (
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
-```
-
-blog-api/
-├── src/
-│ ├── config/
-│ │ ├── db.js
-│ │ └── jwt.js
-│ ├── controllers/
-│ │ ├── authController.js
-│ │ ├── postController.js
-│ │ └── commentController.js
-│ ├── middleware/
-│ │ ├── auth.js
-│ │ ├── error.js
-│ │ └── validate.js
-│ ├── models/
-│ │ ├── User.js
-│ │ ├── Post.js
-│ │ └── Comment.js
-│ ├── routes/
-│ │ ├── authRoutes.js
-│ │ ├── postRoutes.js
-│ │ └── commentRoutes.js
-│ ├── services/
-│ │ └── dbService.js
-│ ├── utils/
-│ │ ├── apiError.js
-│ │ └── asyncHandler.js
-│ └── app.js
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
-
-````
-
 ```bash
 npm install express mysql2 jsonwebtoken bcryptjs dotenv cors helmet
 npm install --save-dev nodemon
