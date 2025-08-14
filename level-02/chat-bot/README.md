@@ -92,33 +92,6 @@ A dual-platform chatbot that works with both Slack and Discord, providing consis
 
 This project is licensed under the MIT License.
 
-```
-chat-bot/
-├── src/
-│   ├── bots/
-│   │   ├── slack/
-│   │   │   ├── slackBot.js
-│   │   │   └── slackHandlers.js
-│   │   ├── discord/
-│   │   │   ├── discordBot.js
-│   │   │   └── discordHandlers.js
-│   │   └── common/
-│   │       ├── commands.js
-│   │       ├── events.js
-│   │       └── utils.js
-│   ├── services/
-│   │   ├── apiService.js
-│   │   └── dbService.js
-│   ├── config/
-│   │   ├── slack.js
-│   │   ├── discord.js
-│   │   └── index.js
-│   └── app.js
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
-```
 
 ```bash
 npm install @slack/bolt discord.js axios mongoose dotenv

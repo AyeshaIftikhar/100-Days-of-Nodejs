@@ -1,5 +1,12 @@
 # Webhook Listener with Ngrok
 
+## What is Ngrok 
+ngrok is a globally distributed `reverse proxy` that secures, protects and accelerates your applications and network services, no matter where you run them. You can think of ngrok as the front door to your applications.
+
+ngrok is environment independent because it can deliver traffic to services running anywhere with no changes to your environment's networking. Run your app on AWS, Azure, Heroku, an on-premise Kubernetes cluster, a Raspberry Pi, and even your laptop. With ngrok, it all works the same.
+
+ngrok is a unified  ingress platform because it combines all the components to deliver traffic from your services to the internet into one. ngrok consolidates together your reverse proxy, load balancer, API gateway, firewall, delivery network, DDoS protection and more.
+
 A local development webhook listener that can be exposed to the internet using Ngrok for testing webhook integrations.
 
 ## Features
@@ -10,13 +17,6 @@ A local development webhook listener that can be exposed to the internet using N
 - Stores received events for debugging
 - Simple API to view and clear events
 
-## Setup
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- Ngrok account (free tier available)
-- npm or yarn
 
 ### Installation
 
@@ -85,24 +85,6 @@ To test with various services:
   }
 ]
 
-```
-webhook-listener/
-├── src/
-│   ├── config/
-│   │   └── ngrok.js
-│   ├── controllers/
-│   │   └── webhookController.js
-│   ├── middleware/
-│   │   ├── auth.js
-│   │   └── validate.js
-│   ├── routes/
-│   │   └── webhookRoutes.js
-│   └── app.js
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
-```
 
 ```bash
 npm install express ngrok body-parser dotenv crypto
