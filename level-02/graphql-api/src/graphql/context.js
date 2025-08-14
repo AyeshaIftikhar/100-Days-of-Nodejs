@@ -1,5 +1,5 @@
-const { verifyToken } = require('../../config/jwt');
-const User = require('../../models/User');
+const { verifyToken } = require("../config/jwt");
+const User = require('../models/User');
 
 const context = async ({ req }) => {
   let token = null;

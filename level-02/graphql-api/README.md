@@ -1,5 +1,17 @@
 # GraphQL API with Apollo Server
 
+## What is GraphQL
+GraphQL is a query language and runtime for APIs that lets clients request exactly the data they need — no more, no less.
+It was developed by Facebook in 2012 and released publicly in 2015.
+
+Instead of the traditional REST API approach (multiple endpoints returning fixed data structures), GraphQL works with a single endpoint where the client specifies the shape and fields of the data they want.
+
+## How It Works
+
+- __Schema:__ The server defines a schema that describes all possible data types and the relationships between them.
+- __Query:__ The client sends a query specifying exactly which fields they want from the schema.
+- __Response:__ The server returns JSON matching the requested structure — nothing extra.
+
 A modern GraphQL API implementation using Apollo Server with MongoDB for data persistence.
 
 ## Features
@@ -16,11 +28,13 @@ A modern GraphQL API implementation using Apollo Server with MongoDB for data pe
 ## GraphQL Operations
 
 ### Authentication
+
 - `signup(input: UserInput!)`: Register a new user
 - `login(email: String!, password: String!)`: Login with credentials
 - `me`: Get current user data (protected)
 
 ### Posts
+
 - `posts`: Get all posts
 - `post(id: ID!)`: Get a single post
 - `createPost(input: PostInput!)`: Create new post (protected)
@@ -28,6 +42,7 @@ A modern GraphQL API implementation using Apollo Server with MongoDB for data pe
 - `deletePost(id: ID!)`: Delete post (protected)
 
 ### Comments
+
 - `comments(postId: ID!)`: Get comments for a post
 - `createComment(input: CommentInput!)`: Add comment (protected)
 - `deleteComment(id: ID!)`: Delete comment (protected)
@@ -50,6 +65,7 @@ A modern GraphQL API implementation using Apollo Server with MongoDB for data pe
 ## Database Schema
 
 ### User
+
 - id: ID!
 - username: String!
 - email: String!
@@ -59,6 +75,7 @@ A modern GraphQL API implementation using Apollo Server with MongoDB for data pe
 - createdAt: String!
 
 ### Post
+
 - id: ID!
 - title: String!
 - content: String!
@@ -67,6 +84,7 @@ A modern GraphQL API implementation using Apollo Server with MongoDB for data pe
 - createdAt: String!
 
 ### Comment
+
 - id: ID!
 - content: String!
 - author: User!
@@ -76,13 +94,16 @@ A modern GraphQL API implementation using Apollo Server with MongoDB for data pe
 ## Example Queries and Mutations
 
 ### Signup
+
 ```graphql
 mutation {
-  signup(input: {
-    username: "testuser",
-    email: "test@example.com",
-    password: "password123"
-  }) {
+  signup(
+    input: {
+      username: "testuser"
+      email: "test@example.com"
+      password: "password123"
+    }
+  ) {
     token
     user {
       id
@@ -91,39 +112,10 @@ mutation {
     }
   }
 }
-
-```
-graphql-api/
-├── src/
-│   ├── config/
-│   │   ├── db.js
-│   │   └── jwt.js
-│   ├── graphql/
-│   │   ├── schema/
-│   │   │   ├── typeDefs.js
-│   │   │   └── index.js
-│   │   ├── resolvers/
-│   │   │   ├── authResolvers.js
-│   │   │   ├── postResolvers.js
-│   │   │   ├── commentResolvers.js
-│   │   │   └── index.js
-│   │   ├── context.js
-│   │   └── dataSources/
-│   │       ├── UserAPI.js
-│   │       ├── PostAPI.js
-│   │       └── CommentAPI.js
-│   ├── models/
-│   │   ├── User.js
-│   │   ├── Post.js
-│   │   └── Comment.js
-│   └── server.js
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
 ```
 
 ```bash
 npm install apollo-server graphql mongoose jsonwebtoken bcryptjs dotenv
 npm install --save-dev nodemon
-```
+npm run dev // it will give the capability of hot reload
+````
