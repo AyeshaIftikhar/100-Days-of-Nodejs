@@ -1,6 +1,6 @@
 const EmailService = require('../services/emailService');
 // In emailController.js
-const EmailTemplate = require('../models/emailTemplate');
+const EmailTemplate = require('../models/EmailTemplate');
 const ApiError = require('../utils/apiError');
 const asyncHandler = require('../utils/asyncHandler');
 

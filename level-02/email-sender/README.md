@@ -50,32 +50,6 @@ A robust email sending system with templating and scheduling capabilities.
   },
   "scheduled": "2023-12-25T00:00:00Z" // Optional
 }
-
-```
-email-sender/
-├── src/
-│   ├── config/
-│   │   ├── email.js
-│   │   └── templates.js
-│   ├── controllers/
-│   │   └── emailController.js
-│   ├── jobs/
-│   │   ├── emailJobs.js
-│   │   └── scheduler.js
-│   ├── models/
-│   │   ├── EmailTemplate.js
-│   │   └── SentEmail.js
-│   ├── services/
-│   │   ├── emailService.js
-│   │   └── templateService.js
-│   ├── utils/
-│   │   ├── helpers.js
-│   │   └── logger.js
-│   └── app.js
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
 ```
 
 ```bash

@@ -129,7 +129,7 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 35. | RESTful Blog API _(Express + MySQL)_       | ✅ ✔️  | 20-07-2025   |
 | 36. | GraphQL API _(Apollo Server)_              | ✅ ✔️  | 21-07-2025   |
 | 37. | Webhook Listener _(Ngrok)_                 | ✅ ✔️  | 22-07-2025   |
-| 38. | Slack/Discord Bot                          | ✅     | 23-05-2025   |
+| 38. | Slack/Discord Bot                          | ✅ ✔️  | 23-05-2025   |
 | 39. | Automated Email Sender _(Nodemailer)_      | ✅     | 24-05-2025   |
 | 40. | PDF Generator API _(PDFKit)_               | ✅     | 25-07-2025   |
 | 41. | PWeb Scraper with Storage _(Cheerio + DB)_ | ✅     | 26-07-2025   |
