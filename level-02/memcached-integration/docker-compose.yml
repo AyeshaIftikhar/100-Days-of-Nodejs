@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: memcached-integration-api
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - LOG_LEVEL=dev
+      - MEMCACHED_SERVERS=memcached:11211
+      - CACHE_DEFAULT_TTL=60
+      - MEMCACHED_OPTIONS={"retries":1,"retry":10000,"remove":false,"timeout":5000}
+      - CACHE_KEY_PREFIX=app:
+    depends_on:
+      - memcached
+    command: sh -c "npm ci && npm run start"
+  memcached:
+    image: memcached:alpine
+    container_name: memcached
+    ports:
+      - "11211:11211"
+    command: memcached -m 64 -vv
