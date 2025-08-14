@@ -13,12 +13,15 @@
   "license": "ISC",
   "description": "This project implements a complete RESTful API for a blogging platform using Node.js, Express, and MySQL. It includes features for user authentication, blog post management, comments, and more, following REST principles.",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.0",
+    "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "express-validator": "^7.2.1",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
     "mysql2": "^3.14.2"
   },
   "devDependencies": {

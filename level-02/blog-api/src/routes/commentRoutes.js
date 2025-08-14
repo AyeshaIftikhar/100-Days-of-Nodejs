@@ -4,6 +4,7 @@ const commentController = require('../controllers/commentController');
 const auth = require('../middleware/auth');
 const validate = require('../middleware/validate');
 
+
 router
   .route('/:postId')
   .get(commentController.getPostComments)
