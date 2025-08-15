@@ -1,0 +1,23 @@
+{
+  "name": "realtime-delivery-tracker",
+  "version": "1.0.0",
+  "description": "GraphQL Subscriptions API for realtime order status and courier location updates.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon --watch src src/server.js",
+     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "graphql": "^16.9.0",
+    "graphql-yoga": "^5.6.0",
+    "nanoid": "^5.0.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
