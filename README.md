@@ -132,7 +132,7 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 38. | Slack/Discord Bot                          | ✅ ✔️  | 23-05-2025   |
 | 39. | Automated Email Sender _(Nodemailer)_      | ✅ ✔️  | 24-05-2025   |
 | 40. | PDF Generator API _(PDFKit)_               | ✅ ✔️  | 25-07-2025   |
-| 41. | PWeb Scraper with Storage _(Cheerio + DB)_ | ✅     | 26-07-2025   |
+| 41. | PWeb Scraper with Storage _(Cheerio + DB)_ | ✅ ✔️  | 26-07-2025   |
 | 42. | Rate-Limited API _(Redis)_                 | ✅     | 27-07-2025   |
 | 43. | Real-Time Chat _(Socket.io)_               | ✅     | 28-07-2025   |
 | 44. | File Encryption Tool _(Crypto module)_     | ✅     | 29-07-2025   |
