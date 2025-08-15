@@ -30,6 +30,8 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Rate-limited API running on port ${PORT}`);
+  console.log('Running on https://localhost:3000');
+  console.log('Press Ctrl+C to stop the server');
 });
 
 module.exports = app;
