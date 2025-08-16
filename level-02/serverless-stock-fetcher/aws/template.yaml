@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS SAM template for Serverless Stock Price Fetcher
+Resources:
+  StockQuoteFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/aws.handler.handler
+      Runtime: nodejs18.x
+      CodeUri: ../
+      Environment:
+        Variables:
+          ALPHA_VANTAGE_API_KEY: "{{resolve:secretsmanager:AlphaVantageApiKey}}"
+          CACHE_TTL: "3600"
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /api/quote
+            Method: get
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - DynamoDBCrudPolicy:
+            TableName: !Ref StockCacheTable
+  StockCacheTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: StockCache
+      AttributeDefinitions:
+        - AttributeName: cacheKey
+          AttributeType: S
+      KeySchema:
+        - AttributeName: cacheKey
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST

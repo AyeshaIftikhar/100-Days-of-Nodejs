@@ -137,10 +137,10 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 43. | Real-Time Chat _(Socket.io)_               | ✅ ✔️  | 28-07-2025   |
 | 44. | File Encryption Tool _(Crypto module)_     | ✅ ✔️  | 29-07-2025   |
 | 45. | RSS Feed Reader                            | ✅ ✔️  | 30-07-2025   |
-| 46. | Stock Price Fetcher _(Alpha Vantage API)_  | ✅     | 31-07-2025   |
-| 47. | Dockerized Node App                        | ✅     | 01-08-2025   |
+| 46. | Stock Price Fetcher _(Alpha Vantage API)_  | ✅ ✔️  | 31-07-2025   |
+| 47. | Dockerized Node App                        | ✅   | 01-08-2025   |
 | 48. | Load-Testing Tool _(Artillery)_            | ✅     | 02-08-2025   |
-| 49. | Serverless Function _(AWS Lambda/Vercel)_  | ✅     | 03-08-2025   |
+| 49. | Serverless Function _(AWS Lambda/Vercel)_  | ✅ ✔️  | 03-08-2025   |
 | 50. | QR Code Generator API                      | ✅     | 04-08-2025   |
 | 51. | Headless CMS _(Strapi/Sanity clone)_       | ✅     | 05-08-2025   |
 | 52. | Automated Backup Script _(AWS S3)_         | ✅     | 06-08-2025   |

@@ -39,4 +39,6 @@ app.get('/health', (req, res) => {
 // Start server
 app.listen(config.app.port, () => {
   console.log(`Server running on port ${config.app.port}`);
+  console.log(`Running on http://localhost:${config.app.port}`);
+  console.log('Press Ctrl+C to stop the server');
 });

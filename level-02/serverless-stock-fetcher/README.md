@@ -53,9 +53,16 @@ serverless deploy
 2. Deploy:
 
 ```bash
-npm install
-vercel
+npm i -g vercel
+vercel 
 vercel --prod
+```
+If the above does not work use the following
+
+```bash
+npm i -g vercel
+npx vercel
+npx vercel --prod
 ```
 
 ## API Endpoint
@@ -97,31 +104,4 @@ vercel dev
 ```bash
 npm test
 npm run test:watch
-```
-
-```
-serverless-stock-fetcher/
-├── .env.example
-├── .gitignore
-├── README.md
-├── package.json
-├── vercel.json
-├── aws/
-│   ├── serverless.yml
-│   └── template.yaml
-├── src/
-│   ├── handlers/
-│   │   ├── aws.handler.js
-│   │   └── vercel.handler.js
-│   ├── lib/
-│   │   ├── alphaVantage.js
-│   │   ├── cache.js
-│   │   ├── response.js
-│   │   └── validator.js
-│   └── utils/
-│       ├── config.js
-│       └── logger.js
-└── tests/
-    ├── integration/
-    └── unit/
 ```
