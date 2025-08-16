@@ -133,8 +133,8 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 39. | Automated Email Sender _(Nodemailer)_      | ✅ ✔️  | 24-05-2025   |
 | 40. | PDF Generator API _(PDFKit)_               | ✅ ✔️  | 25-07-2025   |
 | 41. | PWeb Scraper with Storage _(Cheerio + DB)_ | ✅ ✔️  | 26-07-2025   |
-| 42. | Rate-Limited API _(Redis)_                 | ✅     | 27-07-2025   |
-| 43. | Real-Time Chat _(Socket.io)_               | ✅     | 28-07-2025   |
+| 42. | Rate-Limited API _(Redis)_                 | ✅ ✔️  | 27-07-2025   |
+| 43. | Real-Time Chat _(Socket.io)_               | ✅ ✔️  | 28-07-2025   |
 | 44. | File Encryption Tool _(Crypto module)_     | ✅     | 29-07-2025   |
 | 45. | RSS Feed Reader                            | ✅     | 30-07-2025   |
 | 46. | Stock Price Fetcher _(Alpha Vantage API)_  | ✅     | 31-07-2025   |
@@ -153,7 +153,7 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 59. | CLI Password Manager _(Encrypted)_         | ✅ ✔️  | 13-08-2025   |
 | 60. | Memcached Integration                      | ✅ ✔️  | 14-08-2025   |
 | 61. | GraphQL Subscription API                   | ✅ ✔️  | 15-08-2025   |
-| 62. | OTP Service _(Twilio)_                     | 🔄     | 16-08-2025   |
+| 62. | OTP Service _(Twilio)_                     | ✅ ✔️  | 16-08-2025   |
 | 63. | Markdown Blog Engine                       | 🔄     | 17-08-2025   |
 | 64. | Server-Sent Events _(SSE)_ Demo            | 🔄     | 18-08-2025   |
 | 65. | REST API with Rate Limiting                | 🔄     | 19-08-2025   |

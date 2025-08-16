@@ -40,6 +40,8 @@ const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
   console.log(`Chat server running on port ${PORT}`);
+  console.log(`Running on https://localhost:${PORT}`);
+  console.log('Press Ctrl+C to stop the server');
 });
 
 module.exports = { app, server };
