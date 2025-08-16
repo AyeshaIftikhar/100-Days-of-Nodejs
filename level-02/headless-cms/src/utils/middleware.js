@@ -1,5 +1,7 @@
+
 const { ForbiddenError } = require('./errors');
-const logger = require('./logger');
+const winstonLogger = require('./logger');
+
 
 function errorHandler() {
   return async (ctx, next) => {
@@ -11,21 +13,19 @@ function errorHandler() {
         error: err.message,
         status: ctx.status
       };
-      
       if (ctx.status >= 500) {
-        logger.error(err.stack);
+        winstonLogger.error(err.stack);
       }
     }
   };
 }
 
-function logger() {
+function requestLogger() {
   return async (ctx, next) => {
     const start = Date.now();
     await next();
     const ms = Date.now() - start;
-    
-    logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
+    winstonLogger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
   };
 }
 
@@ -41,6 +41,6 @@ function hasRole(role) {
 
 module.exports = {
   errorHandler,
-  logger,
+  requestLogger,
   hasRole
 };

@@ -1,12 +1,32 @@
 {
   "name": "headless-cms",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
+    "start":"node src/app.js",
+    "dev":"nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Ayesha Iftikhar @ Aishayy",
   "license": "ISC",
-  "description": "A Headless CMS is a content management system that provides backend-only content management, making content accessible via APIs for display on any device. Unlike traditional CMS platforms (like WordPress), it separates the content repository (the \"body\") from the presentation layer (the \"head\")"
+  "description": "A Headless CMS is a content management system that provides backend-only content management, making content accessible via APIs for display on any device. Unlike traditional CMS platforms (like WordPress), it separates the content repository (the \"body\") from the presentation layer (the \"head\")",
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.1",
+    "fs-extra": "^11.3.1",
+    "jsonwebtoken": "^9.0.2",
+    "koa": "^3.0.1",
+    "koa-bodyparser": "^4.4.1",
+    "koa-jwt": "^4.0.4",
+    "koa-router": "^14.0.0",
+    "mongoose": "^8.17.1",
+    "path": "^0.12.7",
+    "uuid": "^11.1.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
