@@ -78,4 +78,4 @@ class StorageService {
   }
 }
 
-module.exports = new StorageService();
+module.exports = StorageService;

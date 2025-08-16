@@ -24,7 +24,7 @@ app.use(cors());
 app.use(helmet());
 app.use(express.json());
 app.use(fileUpload({
-  limits: { fileSize: (parseInt(process.env.MAX_FILE_SIZE_MB) || 50 * 1024 * 1024 )},
+  limits: { fileSize: (parseInt(process.env.MAX_FILE_SIZE_MB) || 50) * 1024 * 1024 },
   abortOnLimit: true,
   responseOnLimit: 'File size exceeds the limit',
   useTempFiles: true,
@@ -42,6 +42,8 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`File encryption tool running on port ${PORT}`);
+  console.log(`Running on http://localhost:${PORT}`);
+  console.log('Press Ctrl+C to stop the server');
 });
 
 module.exports = app;
