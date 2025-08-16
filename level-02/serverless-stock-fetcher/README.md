@@ -65,6 +65,8 @@ npx vercel
 npx vercel --prod
 ```
 
+Vercel URL: https://alphavantage-stock-fetcher.vercel.app
+
 ## API Endpoint
 
 GET /api/quote?symbol=IBM

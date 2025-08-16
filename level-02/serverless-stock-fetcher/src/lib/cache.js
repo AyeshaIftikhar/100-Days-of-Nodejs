@@ -1,6 +1,7 @@
 const { LRUCache } = require('lru-cache');
 const config = require('../utils/config');
 const logger = require('../utils/logger');
+require('dotenv').config();
 
 class MemoryCache {
   constructor() {

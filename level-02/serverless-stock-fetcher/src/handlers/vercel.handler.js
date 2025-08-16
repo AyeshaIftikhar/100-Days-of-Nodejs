@@ -2,6 +2,7 @@ const AlphaVantage = require('../lib/alphaVantage');
 const Cache = require('../lib/cache');
 const { validateSymbol } = require('../lib/validator');
 const { success, error } = require('../lib/response');
+require('dotenv').config();
 
 const cache = new Cache();
 const alphaVantage = new AlphaVantage(process.env.ALPHA_VANTAGE_API_KEY);

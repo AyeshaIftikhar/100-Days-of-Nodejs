@@ -15,7 +15,7 @@ services:
       - ALPHA_VANTAGE_API_KEY=${ALPHA_VANTAGE_API_KEY}
       - REDIS_HOST=redis
     volumes:
-      - ./:/app
+      - ./:/app 
       - /app/node_modules
     depends_on:
       redis:

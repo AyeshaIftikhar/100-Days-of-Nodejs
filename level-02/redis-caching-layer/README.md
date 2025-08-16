@@ -104,6 +104,7 @@ The application follows a layered architecture:
 ```bash
 brew install redis
 brew services start redis
+brew services restart redis
 redis-server // run manaually
 redis-cli ping // should return PONG
 ```
