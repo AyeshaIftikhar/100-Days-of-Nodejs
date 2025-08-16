@@ -58,6 +58,22 @@ class TestController {
       });
     }
   }
+  
+    async listScenarios(req, res) {
+      try {
+        const scenarios = await artilleryService.listScenarios();
+        res.json({
+          success: true,
+          data: scenarios
+        });
+      } catch (error) {
+        logger.error('Error in listScenarios:', error);
+        res.status(500).json({
+          success: false,
+          message: error.message
+        });
+      }
+    }
 }
 
 module.exports = new TestController();

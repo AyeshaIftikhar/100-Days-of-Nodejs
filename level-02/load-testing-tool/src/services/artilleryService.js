@@ -97,6 +97,11 @@ class ArtilleryService {
     const files = await fs.readdir(this.reportsDir);
     return files.filter(file => file.endsWith('.json'));
   }
+
+  async listScenarios() {
+    // Return all test scenarios from the database
+    return TestScenario.find().sort({ createdAt: -1 });
+  }
 }
 
 module.exports = new ArtilleryService();

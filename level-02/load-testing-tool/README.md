@@ -15,45 +15,6 @@ Artillery is a modern, powerful load testing toolkit that allows you to test the
 - Distributed testing - Scale tests across multiple machines
 - Flexible reporting - Generate HTML reports and integrate with monitoring tools
 
-```
-load-testing-tool/
-├── .artillery/
-│   └── plugins/
-│       └── metrics-by-endpoint.js
-├── config/
-│   ├── environments/
-│   │   ├── dev.yml
-│   │   ├── staging.yml
-│   │   └── prod.yml
-│   └── load-tests/
-│       ├── smoke-test.yml
-│       ├── stress-test.yml
-│       └── soak-test.yml
-├── reports/
-├── scripts/
-│   ├── generate-report.js
-│   └── notify.js
-├── src/
-│   ├── controllers/
-│   │   └── testController.js
-│   ├── models/
-│   │   └── TestScenario.js
-│   ├── routes/
-│   │   └── testRoutes.js
-│   ├── services/
-│   │   ├── artilleryService.js
-│   │   └── reportService.js
-│   └── app.js
-├── test/
-│   ├── integration/
-│   └── unit/
-├── .env
-├── .gitignore
-├── README.md
-├── package.json
-└── Dockerfile
-```
-
 # Load Testing Tool with Artillery
 
 ![Load Testing Architecture](https://i.imgur.com/JKQyX1l.png)
