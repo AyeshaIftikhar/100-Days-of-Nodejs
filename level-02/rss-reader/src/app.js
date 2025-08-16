@@ -36,6 +36,8 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`RSS Reader running on port ${PORT}`);
+  console.log(`Running on https://localhost:${PORT}`);
+  console.log('Press Ctrl+C to stop the server');
 });
 
 module.exports = app;

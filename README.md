@@ -136,7 +136,7 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 42. | Rate-Limited API _(Redis)_                 | ✅ ✔️  | 27-07-2025   |
 | 43. | Real-Time Chat _(Socket.io)_               | ✅ ✔️  | 28-07-2025   |
 | 44. | File Encryption Tool _(Crypto module)_     | ✅ ✔️  | 29-07-2025   |
-| 45. | RSS Feed Reader                            | ✅     | 30-07-2025   |
+| 45. | RSS Feed Reader                            | ✅ ✔️  | 30-07-2025   |
 | 46. | Stock Price Fetcher _(Alpha Vantage API)_  | ✅     | 31-07-2025   |
 | 47. | Dockerized Node App                        | ✅     | 01-08-2025   |
 | 48. | Load-Testing Tool _(Artillery)_            | ✅     | 02-08-2025   |
