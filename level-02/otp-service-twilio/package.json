@@ -1,0 +1,40 @@
+{
+  "name": "otp-service-twilio",
+  "version": "1.0.0",
+  "description": "Production-ready Node.js OTP service using Twilio (SMS/WhatsApp), with Redis or in-memory store, hashing, cooldowns, and JWT.",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "otp",
+    "twilio",
+    "sms",
+    "whatsapp",
+    "node",
+    "express",
+    "redis",
+    "auth",
+    "jwt"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "ioredis": "^5.4.1",
+    "joi": "^17.12.2",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "twilio": "^5.3.6"
+  },
+  "devDependencies": {
+    "eslint": "^9.7.0",
+    "nodemon": "^3.1.4"
+  }
+}
