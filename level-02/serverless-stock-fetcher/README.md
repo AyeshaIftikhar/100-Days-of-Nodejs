@@ -65,8 +65,6 @@ npx vercel
 npx vercel --prod
 ```
 
-Vercel URL: https://alphavantage-stock-fetcher.vercel.app
-
 ## API Endpoint
 
 GET /api/quote?symbol=IBM
@@ -107,3 +105,6 @@ vercel dev
 npm test
 npm run test:watch
 ```
+## Hosting
+
+This project is hosted on [Vercel](https://alphavantage-stock-fetcher.vercel.app).

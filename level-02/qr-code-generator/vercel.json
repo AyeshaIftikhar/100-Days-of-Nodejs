@@ -8,7 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/api/generate",
+      "src": "/generate",
       "methods": ["GET", "POST"],
       "dest": "src/handlers/vercel.handler.js"
     }

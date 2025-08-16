@@ -55,15 +55,26 @@ A high-performance QR code generation API with multiple deployment options.
 ## Deployment Options
 
 1. Vercel (Serverless)
+
 ```bash
    npm install -g vercel
-   vercel
+   npx vercel
+   npx vercel --prod
 ```
+
 2. AWS Lambda (Serverless Framework)
+
 ```bash
    npm install -g serverless
    serverless deploy
 ```
+
+if `serverless deploy` don't work then use
+
+```bash
+npx serverless deploy
+```
+
 3. Docker
 
 ```bash
@@ -82,23 +93,26 @@ A high-performance QR code generation API with multiple deployment options.
 ## Basic QR Code
 
 ```bash
-curl "https://your-api.com/generate?text=https://example.com"
+curl "https://qr-code-generator-seven-tawny.vercel.app/generate?text=https://example.com"
 ```
 
 ## Custom QR Code
+
 ```bash
-curl "https://your-api.com/generate?text=Hello&width=300&color=ff0000&bgcolor=eeeeee"
+curl "https://qr-code-generator-seven-tawny.vercel.app/generate?text=Hello&width=300&color=ff0000&bgcolor=eeeeee"
 ```
+
 ## With Logo (POST)
+
 ```bash
-curl -X POST https://your-api.com/generate \
+curl -X POST https://qr-code-generator-seven-tawny.vercel.app/generate \
  -H "Content-Type: application/json" \
  -d '{"text": "Hello", "logo": "https://example.com/logo.png"}'
 ```
 
 ### Response Headers
 
-```curl
+```json
 Content-Type: image/png (or other format)
 
 Cache-Control: public, max-age=86400
@@ -130,30 +144,6 @@ npm run dev
 ```bash
 npm test
 ```
+## Hosting
 
-```
-qr-code-generator/
-├── .env.example
-├── .gitignore
-├── README.md
-├── package.json
-├── vercel.json
-├── serverless.yml
-├── src/
-│   ├── handlers/
-│   │   ├── aws.handler.js
-│   │   ├── vercel.handler.js
-│   │   └── server.handler.js
-│   ├── lib/
-│   │   ├── qrGenerator.js
-│   │   ├── cache.js
-│   │   ├── validator.js
-│   │   └── response.js
-│   └── utils/
-│       ├── config.js
-│       └── logger.js
-├── tests/
-│   ├── integration/
-│   └── unit/
-└── Dockerfile
-```
+This project is hosted on [Vercel](https://qr-code-generator-seven-tawny.vercel.app).
