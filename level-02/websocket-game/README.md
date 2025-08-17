@@ -1,6 +1,6 @@
 # Tic-Tac-Toe WebSocket Game
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/cUJqEsZd0B4/0.jpg)](http://www.youtube.com/shotes/2rWIFAVyfB8)
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/cUJqEsZd0B4/0.jpg)](https://www.youtube.com/shorts/cUJqEsZd0B4)
 
 A multiplayer Tic-Tac-Toe game using WebSocket for real-time communication.
 
