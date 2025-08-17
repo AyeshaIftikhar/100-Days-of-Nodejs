@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title><%= title ? `${title} · ${site.name}` : site.name %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="<%= site.tagline %>">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <meta property="og:title" content="<%= title ? `${title} · ${site.name}` : site.name %>">
+  <meta property="og:description" content="<%= site.tagline %>">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= site.url %>">
+  <link rel="canonical" href="<%= site.url %><%= typeof post !== 'undefined' ? post.url : '' %>">
+</head>
+<body>
+  <header class="container">
+    <a href="/" class="brand"><%= site.name %></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/search">Search</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <p class="tagline"><%= site.tagline %></p>
+    <form action="/search" method="get" class="search">
+      <input type="text" name="q" placeholder="Search AI, FinOps, Security, Compliance…" value="<%= typeof q !== 'undefined' ? q : '' %>"/>
+    </form>
+  </header>
+
+  <main class="container main-with-sidebar">
+    <%- body %>
+  </main>
+
+  <footer class="container foot">
+    <p>© <%= new Date().getFullYear() %> <%= site.name %>. All rights reserved.</p>
+  </footer>
+
+  <script src="/public/js/main.js"></script>
+  <% if (typeof jsonLd !== 'undefined') { %>
+    <script type="application/ld+json"><%- JSON.stringify(jsonLd) %></script>
+  <% } %>
+</body>
+</html>

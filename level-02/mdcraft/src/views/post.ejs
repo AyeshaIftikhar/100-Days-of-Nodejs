@@ -1,0 +1,14 @@
+<article class="post">
+  <h1><%= post.title %></h1>
+  <p class="meta"><time datetime="<%= post.isoDate %>"><%= new Date(post.date).toDateString() %></time> • <%= post.readingMinutes %> min read</p>
+  <div class="content"><%- post.html %></div>
+  <p class="badges">
+    <span class="badge"><%= post.category %></span>
+    <% (post.tags || []).forEach(t => { %><a class="tag" href="/tag/<%= t %>">#<%= t %></a> <% }) %>
+  </p>
+
+  <div class="cta">
+    <h3>Work with us</h3>
+    <p>Need help with <strong><%= post.niche || 'engineering' %></strong>? We offer audits, workshops, and consulting. <a href="/about">Contact us →</a></p>
+  </div>
+</article>

@@ -1,0 +1,41 @@
+<div class="content-area">
+  <section class="grid">
+    <% posts.forEach(p => { %>
+      <article class="card">
+        <h2><a href="<%= p.url %>"><%= p.title %></a></h2>
+        <p class="meta"><time datetime="<%= p.isoDate %>"><%= new Date(p.date).toDateString() %></time> • <%= p.readingMinutes %> min read</p>
+        <p><%= p.excerpt %>…</p>
+        <p class="badges">
+          <span class="badge"><%= p.category %></span>
+          <% (p.tags || []).slice(0,3).forEach(t => { %><a class="tag" href="/tag/<%= t %>">#<%= t %></a> <% }) %>
+        </p>
+        <a class="readmore" href="<%= p.url %>">Read →</a>
+      </article>
+    <% }) %>
+  </section>
+</div>
+
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <h3>Categories</h3>
+    <div class="category-grid">
+      <% categories.forEach(c => { %>
+        <a href="/category/<%= c.name %>" class="category-item">
+          <span class="category-name"><%= c.name %></span>
+          <span class="category-count"><%= c.count %></span>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+  
+  <div class="sidebar-section">
+    <h3>Popular Tags</h3>
+    <div class="tags-cloud">
+      <% tags.slice(0,25).forEach(t => { %>
+        <a class="tag-cloud-item" href="/tag/<%= t.name %>" style="--size: <%= Math.max(0.8, Math.min(2, 0.8 + t.count/5)) %>">
+          #<%= t.name %>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</aside>
