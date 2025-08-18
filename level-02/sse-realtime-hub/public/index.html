@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SSE Realtime Hub – Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    body { margin: 0; background: #0b0f13; color: #e6edf3; }
+    header { padding: 16px 20px; background: #0f1720; border-bottom: 1px solid #1f2937; position: sticky; top: 0; }
+    h1 { margin: 0; font-size: 18px; }
+    main { padding: 20px; max-width: 960px; margin: 0 auto; }
+    .card { background:#0f1720; border:1px solid #1f2937; border-radius:16px; padding:16px; margin-bottom:16px; }
+    .row { display:flex; gap:12px; flex-wrap: wrap; }
+    input, button, select { border-radius: 10px; border:1px solid #1f2937; background:#0b0f13; color:#e6edf3; padding:10px 12px; }
+    button { cursor:pointer; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { padding: 8px 10px; border-bottom: 1px dashed #1f2937; }
+    .muted { color:#9aa3ac; font-size: 12px; }
+    .pill { display:inline-block; padding: 2px 8px; border-radius: 999px; border:1px solid #374151; font-size: 12px; margin-left:6px; }
+    .ok { color:#10b981; }
+    .warn { color:#f59e0b; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SSE Realtime Hub – Live Status Demo</h1>
+  </header>
+  <main>
+    <section class="card">
+      <div class="row">
+        <input id="channel" placeholder="Channel (e.g., orders/123)" value="orders/demo" style="flex:2" />
+        <button id="connectBtn" style="flex:1">Connect</button>
+        <button id="disconnectBtn" style="flex:1">Disconnect</button>
+      </div>
+      <p class="muted">Tip: open another tab and run <code>POST /simulate</code> to see live updates.</p>
+      <p>Status: <span id="status" class="pill warn">disconnected</span></p>
+    </section>
+
+    <section class="card">
+      <h3>Events</h3>
+      <ul id="events"></ul>
+    </section>
+  </main>
+
+  <script>
+    let es = null;
+    let lastEventId = null;
+
+    function log(line) {
+      const ul = document.getElementById('events');
+      const li = document.createElement('li');
+      li.textContent = line;
+      ul.prepend(li);
+    }
+
+    function setStatus(text, cls) {
+      const el = document.getElementById('status');
+      el.textContent = text;
+      el.className = 'pill ' + (cls || '');
+    }
+
+    function connect() {
+      const channel = document.getElementById('channel').value || 'global';
+      const url = `/events?channel=${encodeURIComponent(channel)}`;
+
+      if (es) es.close();
+
+      const opts = {};
+      if (lastEventId) {
+        // EventSource standard only passes Last-Event-ID automatically after reconnects;
+        // here we just store it locally for info.
+      }
+
+      es = new EventSource(url, opts);
+      setStatus('connecting...', 'warn');
+
+      es.onopen = () => {
+        setStatus('connected', 'ok');
+        log(`[open] connected to "${channel}"`);
+      };
+
+      es.onmessage = (ev) => {
+        lastEventId = ev.lastEventId || lastEventId;
+        log(`[message#${ev.lastEventId || '?'}] ${ev.data}`);
+      };
+
+      es.addEventListener('status', (ev) => {
+        lastEventId = ev.lastEventId || lastEventId;
+        try {
+          const data = JSON.parse(ev.data);
+          log(`[status#${ev.lastEventId || '?'}] ${data.status} (${data.step}/${data.total}) @ ${data.at}`);
+        } catch {
+          log(`[status] ${ev.data}`);
+        }
+      });
+
+      es.onerror = () => {
+        setStatus('disconnected (retrying...)', 'warn');
+      };
+    }
+
+    function disconnect() {
+      if (es) {
+        es.close();
+        es = null;
+        setStatus('disconnected', 'warn');
+        log('[close] connection closed');
+      }
+    }
+
+    document.getElementById('connectBtn').onclick = connect;
+    document.getElementById('disconnectBtn').onclick = disconnect;
+  </script>
+</body>
+</html>
