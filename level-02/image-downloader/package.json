@@ -1,0 +1,27 @@
+{
+  "name": "image-downloader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Ayesha Iftikhar",
+  "license": "ISC",
+  "description": "A robust Node.js CLI to download images from URLs, files (txt/csv/json), or by scraping webpages. Supports retries, concurrency, and deduped filenames.",
+  "type": "module",
+  "bin": {
+    "imgdl": "./bin/imgdl.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node bin/imgdl.js --help"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "commander": "^12.1.0",
+    "csv-parse": "^5.5.6",
+    "mime-types": "^2.1.35",
+    "p-limit": "^5.0.0",
+    "sanitize-filename": "^1.6.3"
+  }
+}

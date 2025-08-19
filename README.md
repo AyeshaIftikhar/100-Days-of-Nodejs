@@ -156,7 +156,7 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 62. | OTP Service _(Twilio)_                                   | ✅ ✔️  | 16-08-2025   |
 | 63. | Markdown Blog Engine                                     | ✅ ✔️  | 17-08-2025   |
 | 64. | Server-Sent Events _(SSE)_ Demo                          | ✅ ✔️  | 18-08-2025   |
-| 65. | Image Downloader                                         | 🔄     | 19-08-2025   |
+| 65. | Image Downloader                                         | ✅ ✔️  | 19-08-2025   |
 | 66. | ProxyPulse (URL + VPN Checker)                           | 🔄     | 20-08-2025   |
 | 67. | Automated Screenshot Service _(Puppeteer)_               | 🔄     | 21-08-2025   |
 | 68. | Meme Generator (Canvas)                                  | 🔄     | 22-08-2025   |
@@ -210,7 +210,7 @@ _Focus_: Microservices, DevOps, Scalability, AI
 
 ## 🔖 Bonus: Monetization Ideas
 
-- Sell Project Templates: Bundle projects 50-100 as "Node.js Starter Kits" (Gumroad).
-- Freelancing: Offer to build custom APIs (use projects 30+ as proof).
-- YouTube: Record a "100 Node.js Projects" series (affiliate links in description).
-- Sponsorships: Partner with hosting tools (e.g., "This project uses Railway").
+- **Sell Project Templates:** Bundle projects 50-100 as "Node.js Starter Kits" (Gumroad).
+- **Freelancing:** Offer to build custom APIs (use projects 30+ as proof).
+- **YouTube:** Record a "100 Node.js Projects" series (affiliate links in description).
+- **Sponsorships:** Partner with hosting tools (e.g., "This project uses Railway").
