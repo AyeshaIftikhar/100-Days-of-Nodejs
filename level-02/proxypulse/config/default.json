@@ -1,0 +1,19 @@
+{
+  "port": 6060,
+  "requestTimeout": 10000,
+  "userAgent": "ProxyPulse/1.0 (+https://example.local)",
+  "vpnHeuristics": {
+    "hostingAsnKeywords": [
+      "amazon", "aws", "google", "gcp", "microsoft", "azure",
+      "digitalocean", "linode", "hetzner", "ovh", "contabo", "vultr", "cloudflare"
+    ],
+    "vpnOrgKeywords": [
+      "vpn", "proxy", "mullvad", "nord", "expressvpn", "pia", "surfshark", "windscribe", "proton"
+    ]
+  },
+  "ipApis": [
+    "https://api.ipify.org?format=json",
+    "https://ipinfo.io/json",
+    "https://ipapi.co/json"
+  ]
+}
