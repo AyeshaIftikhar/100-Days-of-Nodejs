@@ -157,8 +157,8 @@ _Focus_: Database, APIs, Integrations, Authentications
 | 63. | Markdown Blog Engine                                     | ✅ ✔️  | 17-08-2025   |
 | 64. | Server-Sent Events _(SSE)_ Demo                          | ✅ ✔️  | 18-08-2025   |
 | 65. | Image Downloader                                         | ✅ ✔️  | 19-08-2025   |
-| 66. | ProxyPulse (URL + VPN Checker)                           | 🔄     | 20-08-2025   |
-| 67. | Automated Screenshot Service _(Puppeteer)_               | 🔄     | 21-08-2025   |
+| 66. | ProxyPulse (URL + VPN Checker)                           | ✅ ✔️  | 20-08-2025   |
+| 67. | Automated Screenshot Service _(Puppeteer)_               | ✅ ✔️  | 21-08-2025   |
 | 68. | Meme Generator (Canvas)                                  | 🔄     | 22-08-2025   |
 | 69. | VoxAssist (Text-to-Speech (TTS) + Simple Voice Assitant) | 🔄     | 23-08-2025   |
 | 70. | CLI SQL Query Runner                                     | 🔄     | 24-08-2025   |
