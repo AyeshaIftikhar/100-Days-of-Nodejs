@@ -1,0 +1,15 @@
+// Example HTTP requests for VS Code REST Client extension
+
+### Health
+GET http://localhost:3000/health
+
+### From URL
+POST http://localhost:3000/api/meme/from-url
+Content-Type: application/json
+
+{
+  "imageUrl": "https://picsum.photos/1200",
+  "topText": "TOP TEXT",
+  "bottomText": "BOTTOM TEXT",
+  "format": "png"
+}
