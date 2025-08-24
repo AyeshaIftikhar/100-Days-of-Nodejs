@@ -1,0 +1,36 @@
+{
+  "name": "cli-sql-query-runner",
+  "version": "1.0.0",
+  "description": "A cross-database CLI to run SQL queries quickly against SQLite, PostgreSQL, or MySQL with table/csv/json output and an interactive REPL.",
+  "type": "module",
+  "bin": {
+    "sqlr": "./bin/sqlr.js"
+  },
+  "scripts": {
+    "start": "node ./bin/sqlr.js",
+    "dev": "node ./bin/sqlr.js --help"
+  },
+  "keywords": [
+    "sql",
+    "cli",
+    "sqlite",
+    "postgres",
+    "mysql",
+    "database",
+    "query",
+    "repl"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cli-table3": "^0.6.5",
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.11.3",
+    "pg": "^8.12.0",
+    "sqlite3": "^5.1.7",
+    "yargs": "^17.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
