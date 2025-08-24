@@ -1,0 +1,30 @@
+{
+  "name": "voxassist",
+  "version": "1.0.0",
+  "description": "VoxAssist: Local-first Text-to-Speech + Simple Voice Assistant (notes, todos, reminders) served by Node.js",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "NODE_ENV=development node src/server.js",
+    "postinstall": "node -e \"console.log('✅ VoxAssist installed')\""
+  },
+  "keywords": [
+    "voice-assistant",
+    "tts",
+    "speech-recognition",
+    "reminders",
+    "todos",
+    "accessibility",
+    "nodejs",
+    "socket.io"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "MIT",
+  "dependencies": {
+    "chrono-node": "^2.7.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}

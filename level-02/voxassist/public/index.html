@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>VoxAssist — Voice Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎙️ VoxAssist</h1>
+    <p class="subtitle">Local-first voice assistant for notes, todos, and reminders.</p>
+
+    <div class="controls">
+      <button id="btnListen">Start Listening</button>
+      <button id="btnStop" disabled>Stop</button>
+      <button id="btnSpeakHelp">Speak Help</button>
+    </div>
+
+    <div class="panels">
+      <section>
+        <h2>Transcript</h2>
+        <div id="transcript" class="panel"></div>
+      </section>
+
+      <section>
+        <h2>Quick Command</h2>
+        <form id="commandForm">
+          <input id="commandInput" type="text" placeholder="e.g., add note buy milk, set reminder at 5 pm to call mom" />
+          <button>Run</button>
+        </form>
+        <small>Tip: try <code>add note ...</code>, <code>add todo ...</code>, <code>list notes</code>, <code>read last note</code>, <code>set reminder at 7:30 pm to drink water</code></small>
+      </section>
+    </div>
+
+    <div class="panels">
+      <section>
+        <h2>Notes</h2>
+        <ul id="notes"></ul>
+        <button id="btnClearNotes">Clear Notes</button>
+      </section>
+
+      <section>
+        <h2>Todos</h2>
+        <ul id="todos"></ul>
+        <form id="todoForm">
+          <input id="todoInput" type="text" placeholder="New todo..." />
+          <button>Add</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Reminders</h2>
+        <ul id="reminders"></ul>
+        <form id="reminderForm">
+          <input id="reminderMsg" type="text" placeholder="Reminder message" />
+          <input id="reminderWhen" type="text" placeholder="When (e.g., in 10 minutes, tomorrow 9am)" />
+          <button>Schedule</button>
+        </form>
+      </section>
+    </div>
+
+    <footer>
+      <p>Made for accessibility & productivity. Works best in Chrome (Web Speech APIs).</p>
+    </footer>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
