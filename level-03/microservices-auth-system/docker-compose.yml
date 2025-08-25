@@ -1,0 +1,55 @@
+version: "3.9"
+services:
+  mongo:
+    image: mongo:6
+    container_name: ms-auth-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  gateway:
+    build: ./gateway
+    container_name: ms-auth-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - AUTH_SERVICE_URL=http://auth-service:4001
+      - USER_SERVICE_URL=http://user-service:4002
+      - JWT_PUBLIC_KEY=${JWT_PUBLIC_KEY}
+      - REQUIRE_EMAIL_VERIFICATION=true
+    depends_on:
+      - auth-service
+      - user-service
+
+  auth-service:
+    build: ./auth-service
+    container_name: ms-auth-auth
+    ports:
+      - "4001:4001"
+    environment:
+      - PORT=4001
+      - MONGO_URL=mongodb://mongo:27017/authdb
+      - ACCESS_TOKEN_PRIVATE_KEY=${ACCESS_TOKEN_PRIVATE_KEY}
+      - ACCESS_TOKEN_PUBLIC_KEY=${JWT_PUBLIC_KEY}
+      - REFRESH_TOKEN_SECRET=${REFRESH_TOKEN_SECRET}
+      - USER_SERVICE_URL=http://user-service:4002
+      - EMAIL_FROM=no-reply@example.com
+      - APP_BASE_URL=http://localhost:8080
+    depends_on:
+      - mongo
+
+  user-service:
+    build: ./user-service
+    container_name: ms-auth-user
+    ports:
+      - "4002:4002"
+    environment:
+      - PORT=4002
+      - MONGO_URL=mongodb://mongo:27017/userdb
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:
