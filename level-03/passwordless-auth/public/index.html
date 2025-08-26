@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Passwordless Sign-in</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:520px;margin:40px auto;padding:0 16px}
+    .card{border:1px solid #ddd;border-radius:12px;padding:20px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    input,button{font-size:16px;padding:12px;border-radius:8px;border:1px solid #ccc;width:100%}
+    button{background:#111;color:#fff;border:0;cursor:pointer}
+    .row{display:flex;gap:8px}
+  </style>
+</head>
+<body>
+  <h1>Passwordless Sign-in</h1>
+  <div class="card">
+    <label>Email</label>
+    <input id="email" type="email" placeholder="you@example.com" />
+    <button id="startBtn" style="margin-top:12px">Send magic link + code</button>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="row">
+      <input id="code" type="text" placeholder="Enter 6-digit code" />
+      <button id="verifyCodeBtn">Verify Code</button>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <button id="meBtn">Call /api/me</button>
+    <button id="logoutBtn" style="margin-top:8px;background:#e11">Logout</button>
+    <pre id="out" style="white-space:pre-wrap"></pre>
+  </div>
+
+  <script>
+    async function post(url, body){
+      const r = await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+      return r.json();
+    }
+    document.getElementById('startBtn').onclick = async () => {
+      const email = document.getElementById('email').value.trim();
+      const res = await post('/auth/start', { email });
+      document.getElementById('out').textContent = JSON.stringify(res,null,2);
+    };
+    document.getElementById('verifyCodeBtn').onclick = async () => {
+      const code = document.getElementById('code').value.trim();
+      const res = await post('/auth/verify', { code });
+      document.getElementById('out').textContent = JSON.stringify(res,null,2);
+    };
+    document.getElementById('meBtn').onclick = async () => {
+      const r = await fetch('/api/me');
+      document.getElementById('out').textContent = JSON.stringify(await r.json(),null,2);
+    };
+    document.getElementById('logoutBtn').onclick = async () => {
+      const res = await post('/auth/logout', {});
+      document.getElementById('out').textContent = JSON.stringify(res,null,2);
+    };
+  </script>
+</body>
+</html>
