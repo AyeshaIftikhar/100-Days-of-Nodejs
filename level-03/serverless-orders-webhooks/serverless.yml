@@ -1,0 +1,86 @@
+service: serverless-orders-webhooks
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ${env:AWS_REGION, 'us-east-1'}
+  stage: ${env:STAGE, 'dev'}
+  environment:
+    TABLE_NAME: ${env:TABLE_NAME, 'OrdersTable-${self:provider.stage}'}
+    WEBHOOK_SECRET: ${env:WEBHOOK_SECRET, ''}
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:PutItem
+            - dynamodb:GetItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+            - dynamodb:Scan
+            - dynamodb:Query
+            - dynamodb:DescribeTable
+          Resource:
+            - arn:aws:dynamodb:${self:provider.region}:*:table/${env:TABLE_NAME, 'OrdersTable-${self:provider.stage}'}
+
+plugins:
+  - serverless-offline
+
+package:
+  patterns:
+    - '!scripts/**'
+    - '!docker-compose.yml'
+
+functions:
+  createItem:
+    handler: src/handlers/items.create
+    events:
+      - httpApi:
+          method: POST
+          path: /orders
+  getItem:
+    handler: src/handlers/items.get
+    events:
+      - httpApi:
+          method: GET
+          path: /orders/{id}
+  listItems:
+    handler: src/handlers/items.list
+    events:
+      - httpApi:
+          method: GET
+          path: /orders
+  updateItem:
+    handler: src/handlers/items.update
+    events:
+      - httpApi:
+          method: PUT
+          path: /orders/{id}
+  deleteItem:
+    handler: src/handlers/items.remove
+    events:
+      - httpApi:
+          method: DELETE
+          path: /orders/{id}
+  webhookPayment:
+    handler: src/handlers/webhook.payment
+    events:
+      - httpApi:
+          method: POST
+          path: /webhooks/payment
+
+resources:
+  Resources:
+    OrdersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${env:TABLE_NAME, 'OrdersTable-${self:provider.stage}'}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH

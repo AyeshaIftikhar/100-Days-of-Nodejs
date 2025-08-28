@@ -1,0 +1,6 @@
+node_modules
+.serverless
+.env
+*.log
+.idea
+.DS_Store

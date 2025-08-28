@@ -1,0 +1,28 @@
+{
+  "name": "serverless-orders-webhooks",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "ISC",
+  "description": "Serverless CRUD API with DynamoDB and secure webhook handler",
+  "main": "src/handlers/items.js",
+  "type": "module",
+  "scripts": {
+    "dev:up": "docker compose up -d dynamodb",
+    "dev:wait": "sleep 5",
+    "dev:setup": "node scripts/setup-local-dynamodb.js",
+    "dev": "npm run dev:up && npm run dev:wait && npm run dev:setup && serverless offline",
+    "deploy": "serverless deploy",
+    "remove": "serverless remove",
+    "lint": "echo 'Add your linter here'"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.637.0",
+    "@aws-sdk/lib-dynamodb": "^3.637.0",
+    "nanoid": "^5.0.7"
+  },
+  "devDependencies": {
+    "serverless": "^3.39.0",
+    "serverless-offline": "^13.8.0"
+  }
+}
