@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Real-Time Analytics Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Real-Time Analytics Dashboard</h1>
+    <p id="status">Connecting...</p>
+  </header>
+  <main>
+    <section class="card">
+      <h2>Overview</h2>
+      <div class="kpis">
+        <div class="kpi">
+          <div class="label">Active Users</div>
+          <div id="activeUsers" class="value">—</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Events / sec</div>
+          <div id="eventsPerSec" class="value">—</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Error Rate (%)</div>
+          <div id="errorRate" class="value">—</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Avg Latency (ms)</div>
+          <div id="avgLatency" class="value">—</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Events / sec (last 60 samples)</h2>
+      <canvas id="eventsChart" width="800" height="250"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>Active Users (last 60 samples)</h2>
+      <canvas id="usersChart" width="800" height="250"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <small>Built with Node.js + Socket.IO • Docker-ready</small>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>
