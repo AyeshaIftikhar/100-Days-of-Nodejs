@@ -1,0 +1,21 @@
+{
+  "name": "elk-logging-system-node",
+  "version": "1.0.0",
+  "description": "A complete Node.js + ELK logging stack with structured logs, correlation IDs, and centralized observability.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node src/index.js",
+    "start": "node src/index.js",
+    "lint": "eslint ."
+  },
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "pino": "^9.0.0",
+    "pino-http": "^10.1.0",
+    "uuid": "^9.0.1"
+  }
+}
