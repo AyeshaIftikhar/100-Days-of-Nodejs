@@ -1,0 +1,17 @@
+<section>
+  <h2>Latest Items</h2>
+  <% if (!feeds || feeds.length === 0) { %>
+    <p>No items available right now. Try again later.</p>
+  <% } else { %>
+    <ul class="items">
+      <% feeds.forEach(function(item) { %>
+        <li class="item">
+          <h3><a href="<%= item.link || ('/article/' + item._encodedId) %>" target="<%= item.link ? '_blank' : '_self' %>"><%= item.title %></a></h3>
+          <div class="meta"><span><%= item._feedTitle %></span> • <small><%= item.pubDate ? new Date(item.pubDate).toLocaleString() : '' %></small></div>
+          <p><%= item.description ? item.description.substring(0, 300) : '' %> ...</p>
+          <a class="readmore" href="/article/<%= item._encodedId %>">View</a>
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
+</section>

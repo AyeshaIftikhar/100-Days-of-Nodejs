@@ -1,0 +1,36 @@
+{
+  "name": "servernews-ssr",
+  "version": "1.0.0",
+  "description": "SEO-friendly server-side rendered news & events aggregator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
+    "lint": "eslint . --ext .js"
+  },
+  "keywords": [
+    "nodejs",
+    "ssr",
+    "express",
+    "rss",
+    "news",
+    "aggregator"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.7",
+    "sanitize-html": "^2.11.1",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "nodemon": "^2.0.22"
+  }
+}

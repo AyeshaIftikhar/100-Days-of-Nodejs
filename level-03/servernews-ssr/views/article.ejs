@@ -1,0 +1,13 @@
+<% if (!item) { %>
+  <h2>Article not found</h2>
+  <p>We couldn't find that article.</p>
+<% } else { %>
+  <article class="article">
+    <h2><%= item.title %></h2>
+    <div class="meta"><strong><%= item._feedTitle %></strong> • <small><%= item.pubDate ? new Date(item.pubDate).toLocaleString() : '' %></small></div>
+    <div class="content"><%- item.description %></div>
+    <% if (item.link) { %>
+      <p><a href="<%= item.link %>" target="_blank" rel="noopener">Open original</a></p>
+    <% } %>
+  </article>
+<% } %>

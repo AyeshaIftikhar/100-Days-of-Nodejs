@@ -1,0 +1,17 @@
+[
+  {
+    "id": "hn",
+    "title": "Hacker News",
+    "url": "https://hnrss.org/frontpage"
+  },
+  {
+    "id": "reddit_programming",
+    "title": "Reddit - Programming",
+    "url": "https://www.reddit.com/r/programming/.rss"
+  },
+  {
+    "id": "css_tricks",
+    "title": "CSS-Tricks",
+    "url": "https://css-tricks.com/feed/"
+  }
+]

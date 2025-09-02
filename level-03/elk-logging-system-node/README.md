@@ -40,6 +40,8 @@ ELK Stack is a popular open-source log management and analytics platform made up
 - Real-time monitoring and dashboards.
 - Helps detect errors, anomalies, and performance issues.
 
+---
+
 ## Features
 
 - **Structured JSON logs** using `pino`
