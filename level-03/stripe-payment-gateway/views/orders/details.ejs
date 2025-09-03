@@ -1,0 +1,70 @@
+<%- include('../layout', { title: title }) %>
+
+<div class="card mb-4">
+  <div class="card-header">
+    <h3>Order Details</h3>
+  </div>
+  <div class="card-body">
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <h5>Order Information</h5>
+        <p><strong>Order ID:</strong> <%= order._id %></p>
+        <p><strong>Date:</strong> <%= new Date(order.createdAt).toLocaleString() %></p>
+        <p>
+          <strong>Status:</strong>
+          <% if (order.status === 'completed') { %>
+            <span class="badge bg-success">Completed</span>
+          <% } else if (order.status === 'pending') { %>
+            <span class="badge bg-warning text-dark">Pending</span>
+          <% } else { %>
+            <span class="badge bg-danger">Failed</span>
+          <% } %>
+        </p>
+        <p><strong>Payment ID:</strong> <%= order.paymentIntentId %></p>
+      </div>
+      <div class="col-md-6">
+        <h5>Customer Information</h5>
+        <p><strong>Name:</strong> <%= order.customer.name %></p>
+        <p><strong>Email:</strong> <%= order.customer.email %></p>
+        <p><strong>Address:</strong> <%= order.customer.address %></p>
+      </div>
+    </div>
+    
+    <h5>Products</h5>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% order.products.forEach(item => { %>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="<%= item.product.image %>" alt="<%= item.product.name %>" class="img-thumbnail me-2" style="width: 50px;">
+                  <%= item.product.name %>
+                </div>
+              </td>
+              <td>$<%= item.product.price.toFixed(2) %></td>
+              <td><%= item.quantity %></td>
+              <td>$<%= (item.product.price * item.quantity).toFixed(2) %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="3" class="text-end">Total:</th>
+            <th>$<%= order.totalAmount.toFixed(2) %></th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+
+<a href="/orders" class="btn btn-primary">Back to Orders</a>

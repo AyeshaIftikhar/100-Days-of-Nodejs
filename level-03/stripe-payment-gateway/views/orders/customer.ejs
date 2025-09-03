@@ -1,0 +1,46 @@
+<%- include('../layout', { title: title }) %>
+
+<h2 class="mb-4"><%= title %></h2>
+
+<% if (orders && orders.length > 0) { %>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% orders.forEach(order => { %>
+          <tr>
+            <td><%= order._id %></td>
+            <td>$<%= order.totalAmount.toFixed(2) %></td>
+            <td>
+              <% if (order.status === 'completed') { %>
+                <span class="badge bg-success">Completed</span>
+              <% } else if (order.status === 'pending') { %>
+                <span class="badge bg-warning text-dark">Pending</span>
+              <% } else { %>
+                <span class="badge bg-danger">Failed</span>
+              <% } %>
+            </td>
+            <td><%= new Date(order.createdAt).toLocaleString() %></td>
+            <td>
+              <a href="/orders/<%= order._id %>" class="btn btn-sm btn-info">View</a>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+<% } else { %>
+  <div class="alert alert-info">
+    No orders found for customer <%= customerEmail %>.
+  </div>
+<% } %>
+
+<a href="/orders" class="btn btn-primary">All Orders</a>

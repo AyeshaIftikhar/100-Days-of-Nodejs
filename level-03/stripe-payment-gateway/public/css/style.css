@@ -1,0 +1,70 @@
+/* Main Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.jumbotron {
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.jumbotron .btn {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.form-control:focus {
+  border-color: #4a56e2;
+  box-shadow: 0 0 0 0.2rem rgba(74, 86, 226, 0.25);
+}
+
+/* Stripe Elements custom styling */
+#card-element {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+}
+
+#card-element.StripeElement--focus {
+  border-color: #4a56e2;
+  box-shadow: 0 0 0 0.2rem rgba(74, 86, 226, 0.25);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #4a56e2;
+  border-color: #4a56e2;
+}
+
+.btn-primary:hover {
+  background-color: #3a46d2;
+  border-color: #3a46d2;
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .jumbotron {
+    padding: 2rem 1rem;
+  }
+}
