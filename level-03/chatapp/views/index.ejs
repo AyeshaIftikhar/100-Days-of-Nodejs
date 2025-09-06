@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatApp - Real-time Voice & Video Chat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Login/Register Container -->
+    <div id="auth-container" class="container">
+      <div class="auth-box">
+        <div class="tabs">
+          <div class="tab active" data-tab="login">Login</div>
+          <div class="tab" data-tab="register">Register</div>
+        </div>
+        
+        <div class="tab-content">
+          <!-- Login Form -->
+          <div id="login-form" class="form-container active">
+            <h2>Login to ChatApp</h2>
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+              </div>
+              <button type="submit" class="btn">Login</button>
+            </form>
+          </div>
+          
+          <!-- Register Form -->
+          <div id="register-form" class="form-container">
+            <h2>Create an Account</h2>
+            <form id="registerForm">
+              <div class="form-group">
+                <label for="registerUsername">Username</label>
+                <input type="text" id="registerUsername" placeholder="Choose a username" required>
+              </div>
+              <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" placeholder="Choose a password" required>
+              </div>
+              <div class="form-group">
+                <label for="registerConfirmPassword">Confirm Password</label>
+                <input type="password" id="registerConfirmPassword" placeholder="Confirm your password" required>
+              </div>
+              <button type="submit" class="btn">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Chat Container -->
+    <div id="chat-container" class="container hidden">
+      <div class="sidebar">
+        <div class="user-profile">
+          <div class="avatar" id="user-avatar"></div>
+          <div class="user-info">
+            <h3 id="username">Username</h3>
+            <div class="status-dropdown">
+              <select id="status-select">
+                <option value="online">Online</option>
+                <option value="away">Away</option>
+                <option value="busy">Busy</option>
+                <option value="offline">Offline</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="room-actions">
+          <button id="create-room-btn" class="btn"><i class="fas fa-plus"></i> New Room</button>
+        </div>
+        
+        <div class="rooms-container">
+          <h3>Rooms</h3>
+          <ul id="rooms-list"></ul>
+        </div>
+        
+        <div class="users-container">
+          <h3>Online Users</h3>
+          <ul id="users-list"></ul>
+        </div>
+        
+        <div class="logout-container">
+          <button id="logout-btn" class="btn btn-outline">Logout</button>
+        </div>
+      </div>
+      
+      <div class="chat-area">
+        <div id="welcome-screen" class="welcome-screen">
+          <h2>Welcome to ChatApp</h2>
+          <p>Select a room to start chatting or create a new one!</p>
+          <div class="welcome-icons">
+            <div class="welcome-icon">
+              <i class="fas fa-comments"></i>
+              <span>Text Chat</span>
+            </div>
+            <div class="welcome-icon">
+              <i class="fas fa-phone"></i>
+              <span>Voice Calls</span>
+            </div>
+            <div class="welcome-icon">
+              <i class="fas fa-video"></i>
+              <span>Video Calls</span>
+            </div>
+          </div>
+        </div>
+        
+        <div id="room-chat" class="room-chat hidden">
+          <div class="room-header">
+            <div class="room-info">
+              <h2 id="current-room-name">Room Name</h2>
+              <span id="current-room-participants">0 participants</span>
+            </div>
+            <div class="room-actions">
+              <button id="add-participants-btn" class="btn-icon" title="Add Participants">
+                <i class="fas fa-user-plus"></i>
+              </button>
+              <button id="voice-call-btn" class="btn-icon" title="Voice Call">
+                <i class="fas fa-phone"></i>
+              </button>
+              <button id="video-call-btn" class="btn-icon" title="Video Call">
+                <i class="fas fa-video"></i>
+              </button>
+              <button id="leave-room-btn" class="btn-icon" title="Leave Room">
+                <i class="fas fa-sign-out-alt"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div id="messages-container" class="messages-container"></div>
+          
+          <div class="message-input-container">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button id="send-message-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="call-container" class="call-container hidden">
+        <div class="call-header">
+          <div class="call-info">
+            <h2 id="call-status">Connecting...</h2>
+            <span id="call-duration">00:00</span>
+          </div>
+          <div class="call-actions">
+            <button id="toggle-video-btn" class="btn-icon" title="Toggle Video">
+              <i class="fas fa-video"></i>
+            </button>
+            <button id="toggle-audio-btn" class="btn-icon" title="Toggle Audio">
+              <i class="fas fa-microphone"></i>
+            </button>
+            <button id="end-call-btn" class="btn-icon btn-danger" title="End Call">
+              <i class="fas fa-phone-slash"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="video-container">
+          <div id="remote-video-container" class="remote-video">
+            <video id="remote-video" autoplay playsinline></video>
+            <div class="remote-user-info">
+              <span id="remote-user-name">User</span>
+            </div>
+          </div>
+          
+          <div id="local-video-container" class="local-video">
+            <video id="local-video" autoplay playsinline muted></video>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modals -->
+    <div id="create-room-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Create New Room</h2>
+          <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <form id="create-room-form">
+            <div class="form-group">
+              <label for="room-name">Room Name</label>
+              <input type="text" id="room-name" placeholder="Enter room name" required>
+            </div>
+            <div class="form-group">
+              <label for="room-description">Description</label>
+              <textarea id="room-description" placeholder="Enter room description"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="room-type">Room Type</label>
+              <select id="room-type">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Add Participants</label>
+              <div id="participants-list" class="participants-list"></div>
+            </div>
+            <button type="submit" class="btn">Create Room</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="add-participants-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Add Participants</h2>
+          <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <input type="text" id="search-participants" placeholder="Search users...">
+          </div>
+          <div id="available-participants" class="participants-list"></div>
+          <button id="add-selected-participants" class="btn">Add Selected Users</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="incoming-call-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Incoming Call</h2>
+        </div>
+        <div class="modal-body">
+          <div class="incoming-call-info">
+            <div id="caller-avatar" class="avatar"></div>
+            <p><span id="caller-name">User</span> is calling you</p>
+            <p id="call-type-label">Video Call</p>
+          </div>
+          <div class="call-actions">
+            <button id="accept-call-btn" class="btn btn-success">
+              <i class="fas fa-phone"></i> Accept
+            </button>
+            <button id="reject-call-btn" class="btn btn-danger">
+              <i class="fas fa-phone-slash"></i> Reject
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/chat.js"></script>
+  <script src="/js/webrtc.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
