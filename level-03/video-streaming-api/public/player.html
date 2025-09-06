@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HLS Video Player</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    body {
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    .player-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      margin-bottom: 20px;
+    }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      border-radius: 4px;
+    }
+    .analytics-container {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f1f3f5;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="player-container">
+      <h1 class="mb-4" id="video-title">Loading Video...</h1>
+      
+      <div class="video-container">
+        <video id="video" controls></video>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-8">
+          <p id="video-description" class="text-muted">Loading description...</p>
+        </div>
+        <div class="col-md-4 text-end">
+          <p class="mb-0"><strong>Views:</strong> <span id="view-count">-</span></p>
+          <p><strong>Upload Date:</strong> <span id="upload-date">-</span></p>
+        </div>
+      </div>
+      
+      <div class="analytics-container">
+        <h5>Video Stats</h5>
+        <div class="row">
+          <div class="col-md-4">
+            <p><strong>Resolution:</strong> <span id="current-resolution">-</span></p>
+          </div>
+          <div class="col-md-4">
+            <p><strong>Watch Time:</strong> <span id="watch-time">0s</span></p>
+          </div>
+          <div class="col-md-4">
+            <p><strong>Buffering:</strong> <span id="buffering-status">-</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get video ID from URL
+    const videoId = window.location.pathname.split('/').pop();
+    let watchTime = 0;
+    let watchTimeInterval;
+    let videoMetadata;
+    
+    // Fetch video metadata
+    fetch(`/api/videos/${videoId}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Video not found');
+        }
+        return response.json();
+      })
+      .then(data => {
+        videoMetadata = data.data;
+        
+        // Update UI with video metadata
+        document.getElementById('video-title').textContent = videoMetadata.title;
+        document.getElementById('video-description').textContent = videoMetadata.description || 'No description provided.';
+        document.getElementById('view-count').textContent = videoMetadata.views;
+        document.getElementById('upload-date').textContent = new Date(videoMetadata.createdAt).toLocaleDateString();
+      })
+      .catch(error => {
+        console.error('Error fetching video metadata:', error);
+        document.getElementById('video-title').textContent = 'Error loading video';
+        document.getElementById('video-description').textContent = 'Could not load video information.';
+      });
+    
+    // Initialize HLS player
+    const video = document.getElementById('video');
+    const videoSrc = `/api/videos/${videoId}/stream`;
+    
+    if (Hls.isSupported()) {
+      const hls = new Hls({
+        debug: false,
+        enableWorker: true,
+        lowLatencyMode: false,
+        backBufferLength: 90
+      });
+      
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+      
+      hls.on(Hls.Events.MANIFEST_PARSED, function(event, data) {
+        console.log('Manifest loaded with ' + data.levels.length + ' quality levels');
+        video.play();
+        
+        // Start tracking watch time
+        startWatchTimeTracking();
+      });
+      
+      hls.on(Hls.Events.LEVEL_SWITCHED, function(event, data) {
+        const level = hls.levels[data.level];
+        document.getElementById('current-resolution').textContent = 
+          level ? `${level.width}x${level.height} (${Math.round(level.bitrate/1000)} kbps)` : 'Auto';
+      });
+      
+      hls.on(Hls.Events.ERROR, function(event, data) {
+        if (data.fatal) {
+          switch(data.type) {
+            case Hls.ErrorTypes.NETWORK_ERROR:
+              console.error('Network error', data);
+              hls.startLoad();
+              break;
+            case Hls.ErrorTypes.MEDIA_ERROR:
+              console.error('Media error', data);
+              hls.recoverMediaError();
+              break;
+            default:
+              console.error('Unrecoverable error', data);
+              hls.destroy();
+              break;
+          }
+          document.getElementById('buffering-status').textContent = 'Error: ' + data.details;
+        }
+      });
+      
+      // Buffer monitoring
+      video.addEventListener('waiting', function() {
+        document.getElementById('buffering-status').textContent = 'Buffering...';
+      });
+      
+      video.addEventListener('playing', function() {
+        document.getElementById('buffering-status').textContent = 'Playing';
+      });
+    } 
+    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      // For Safari and iOS
+      video.src = videoSrc;
+      video.addEventListener('loadedmetadata', function() {
+        video.play();
+        
+        // Start tracking watch time
+        startWatchTimeTracking();
+      });
+    }
+    else {
+      document.getElementById('video-title').textContent = 'Error: HLS Not Supported';
+      document.getElementById('video-description').textContent = 
+        'Your browser does not support HLS playback. Please use a modern browser like Chrome, Firefox, or Safari.';
+    }
+    
+    // Function to track watch time
+    function startWatchTimeTracking() {
+      watchTimeInterval = setInterval(() => {
+        if (!video.paused && !video.ended) {
+          watchTime += 1;
+          document.getElementById('watch-time').textContent = formatTime(watchTime);
+        }
+      }, 1000);
+      
+      // Send analytics data when video is paused or ends
+      video.addEventListener('pause', sendAnalytics);
+      video.addEventListener('ended', sendAnalytics);
+      
+      // Also send analytics periodically (every 30 seconds)
+      setInterval(sendAnalytics, 30000);
+    }
+    
+    // Function to send analytics data to the server
+    function sendAnalytics() {
+      if (watchTime > 0) {
+        fetch(`/api/videos/${videoId}/analytics`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ watchTime })
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to send analytics');
+          }
+          console.log('Analytics sent successfully');
+        })
+        .catch(error => {
+          console.error('Error sending analytics:', error);
+        });
+      }
+    }
+    
+    // Function to format seconds into readable time
+    function formatTime(seconds) {
+      const hrs = Math.floor(seconds / 3600);
+      const mins = Math.floor((seconds % 3600) / 60);
+      const secs = Math.floor(seconds % 60);
+      
+      let timeString = '';
+      if (hrs > 0) {
+        timeString += `${hrs}h `;
+      }
+      if (mins > 0 || hrs > 0) {
+        timeString += `${mins}m `;
+      }
+      timeString += `${secs}s`;
+      
+      return timeString;
+    }
+    
+    // Clean up on page unload
+    window.addEventListener('beforeunload', () => {
+      clearInterval(watchTimeInterval);
+      sendAnalytics();
+    });
+  </script>
+</body>
+</html>

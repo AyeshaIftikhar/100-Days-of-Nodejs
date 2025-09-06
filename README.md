@@ -180,9 +180,9 @@ _Focus_: Microservices, DevOps, Scalability, AI
 | 79.  | Server-Side Rendering (SSR) App                    | ✅     | 02-09-2025   |
 | 80.  | Payment Gateway Integration (Stripe)               | ✅     | 03-09-2025   |
 | 81.  | Feature Flag Service                               | ✅     | 04-09-2025   |
-| 82.  | GraphQL Federation                                 | ✅    | 05-09-2025   |
-| 83.  | Video Streaming API (HLS)                          | 🔄     | 06-09-2025   |
-| 84.  | ChatApp (Voice + Video)                            | 🔄     | 07-09-2025   |
+| 82.  | GraphQL Federation                                 | ✅     | 05-09-2025   |
+| 83.  | Video Streaming API (HLS)                          | ✅     | 06-09-2025   |
+| 84.  | ChatApp (Voice + Video)                            | ✅     | 07-09-2025   |
 | 85.  | Automated Testing Framework                        | 🔄     | 08-09-2025   |
 | 86.  | WebAssembly-Powered API                            | 🔄     | 09-09-2025   |
 | 87.  | Chaos Engineering Tool                             | 🔄     | 10-09-2025   |
