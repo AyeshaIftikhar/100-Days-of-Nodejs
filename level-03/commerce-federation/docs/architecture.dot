@@ -1,0 +1,45 @@
+digraph {
+  rankdir=TB;
+  
+  subgraph cluster_0 {
+    label="Commerce Federation";
+    style=filled;
+    color=lightgrey;
+    
+    client [label="Client Application", shape=box];
+    
+    subgraph cluster_1 {
+      label="API Gateway";
+      style=filled;
+      color=lightblue;
+      
+      gateway [label="Apollo Gateway\n(Port 4000)", shape=box];
+    }
+    
+    subgraph cluster_2 {
+      label="Microservices";
+      style=filled;
+      color=lightgreen;
+      
+      products [label="Products Service\n(Port 4001)", shape=box];
+      users [label="Users Service\n(Port 4002)", shape=box];
+      orders [label="Orders Service\n(Port 4003)", shape=box];
+      reviews [label="Reviews Service\n(Port 4004)", shape=box];
+    }
+    
+    client -> gateway;
+    gateway -> products;
+    gateway -> users;
+    gateway -> orders;
+    gateway -> reviews;
+    
+    // Service-to-service references through federation
+    products -> reviews [style=dashed, label="extends"];
+    users -> orders [style=dashed, label="extends"];
+    users -> reviews [style=dashed, label="extends"];
+    products -> orders [style=dashed, label="extends"];
+  }
+}
+
+// Note: This is a DOT graph description for the architecture.
+// Generate PNG with: dot -Tpng architecture.dot -o architecture-diagram.png

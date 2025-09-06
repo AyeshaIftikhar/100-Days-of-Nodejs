@@ -1,0 +1,38 @@
+{
+  "name": "commerce-federation",
+  "version": "1.0.0",
+  "description": "GraphQL Federation e-commerce platform with microservices",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm run install:gateway && npm run install:products && npm run install:users && npm run install:orders && npm run install:reviews",
+    "install:gateway": "cd gateway && npm install",
+    "install:products": "cd services/products && npm install",
+    "install:users": "cd services/users && npm install",
+    "install:orders": "cd services/orders && npm install",
+    "install:reviews": "cd services/reviews && npm install",
+    "start:gateway": "cd gateway && npm start",
+    "start:products": "cd services/products && npm start",
+    "start:users": "cd services/users && npm start", 
+    "start:orders": "cd services/orders && npm start",
+    "start:reviews": "cd services/reviews && npm start",
+    "start:all": "concurrently \"npm run start:products\" \"npm run start:users\" \"npm run start:orders\" \"npm run start:reviews\" \"npm run start:gateway\"",
+    "dev": "concurrently \"npm run dev:products\" \"npm run dev:users\" \"npm run dev:orders\" \"npm run dev:reviews\" \"npm run dev:gateway\"",
+    "dev:gateway": "cd gateway && npm run dev",
+    "dev:products": "cd services/products && npm run dev",
+    "dev:users": "cd services/users && npm run dev",
+    "dev:orders": "cd services/orders && npm run dev",
+    "dev:reviews": "cd services/reviews && npm run dev"
+  },
+  "keywords": [
+    "graphql",
+    "federation",
+    "microservices",
+    "apollo",
+    "e-commerce"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
