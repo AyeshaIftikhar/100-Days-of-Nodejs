@@ -1,0 +1,572 @@
+openapi: 3.0.0
+info:
+  title: Feature Flag Service API
+  description: API documentation for the Feature Flag Service
+  version: 1.0.0
+  contact:
+    name: API Support
+    email: support@example.com
+servers:
+  - url: /api
+    description: API base URL
+
+tags:
+  - name: Feature Flags
+    description: Feature flag management endpoints
+  - name: Evaluations
+    description: Feature flag evaluation endpoints
+  - name: Analytics
+    description: Analytics and reporting endpoints
+
+paths:
+  /projects/{projectId}/flags:
+    get:
+      summary: Get all feature flags for a project
+      tags:
+        - Feature Flags
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: projectId
+          required: true
+          schema:
+            type: string
+          description: ID of the project
+      responses:
+        '200':
+          description: A list of feature flags
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  count:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/FeatureFlag'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Project not found
+    post:
+      summary: Create a new feature flag
+      tags:
+        - Feature Flags
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: projectId
+          required: true
+          schema:
+            type: string
+          description: ID of the project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeatureFlagInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/FeatureFlag'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+
+  /flags/{id}:
+    get:
+      summary: Get a feature flag by ID
+      tags:
+        - Feature Flags
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Feature flag ID
+      responses:
+        '200':
+          description: Feature flag details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/FeatureFlag'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Feature flag not found
+    put:
+      summary: Update a feature flag
+      tags:
+        - Feature Flags
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Feature flag ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeatureFlagUpdate'
+      responses:
+        '200':
+          description: Updated feature flag
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/FeatureFlag'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Feature flag not found
+    delete:
+      summary: Delete a feature flag
+      tags:
+        - Feature Flags
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Feature flag ID
+      responses:
+        '200':
+          description: Feature flag deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+        '401':
+          description: Unauthorized
+        '404':
+          description: Feature flag not found
+
+  /projects/{projectId}/evaluate:
+    post:
+      summary: Evaluate a feature flag
+      tags:
+        - Evaluations
+      parameters:
+        - in: path
+          name: projectId
+          required: true
+          schema:
+            type: string
+          description: ID of the project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - flagKey
+                - environment
+                - userId
+              properties:
+                flagKey:
+                  type: string
+                  description: The key of the feature flag to evaluate
+                environment:
+                  type: string
+                  description: The environment to evaluate the flag in
+                  enum: [development, staging, production]
+                userId:
+                  type: string
+                  description: The ID of the user to evaluate for
+                context:
+                  type: object
+                  description: Additional contextual data for evaluation
+                  additionalProperties: true
+      responses:
+        '200':
+          description: Evaluation result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/EvaluationResult'
+        '400':
+          description: Bad request
+        '404':
+          description: Feature flag not found
+
+  /projects/{projectId}/evaluate-batch:
+    post:
+      summary: Evaluate multiple feature flags in a batch
+      tags:
+        - Evaluations
+      parameters:
+        - in: path
+          name: projectId
+          required: true
+          schema:
+            type: string
+          description: ID of the project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - flagKeys
+                - environment
+                - userId
+              properties:
+                flagKeys:
+                  type: array
+                  items:
+                    type: string
+                  description: Array of feature flag keys to evaluate
+                environment:
+                  type: string
+                  description: The environment to evaluate the flags in
+                  enum: [development, staging, production]
+                userId:
+                  type: string
+                  description: The ID of the user to evaluate for
+                context:
+                  type: object
+                  description: Additional contextual data for evaluation
+                  additionalProperties: true
+      responses:
+        '200':
+          description: Batch evaluation results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    additionalProperties:
+                      $ref: '#/components/schemas/EvaluationResult'
+        '400':
+          description: Bad request
+
+  /flags/{id}/analytics:
+    get:
+      summary: Get analytics for a feature flag
+      tags:
+        - Analytics
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Feature flag ID
+        - in: query
+          name: environment
+          required: true
+          schema:
+            type: string
+            enum: [development, staging, production]
+          description: Environment to get analytics for
+        - in: query
+          name: startDate
+          schema:
+            type: string
+            format: date-time
+          description: Start date for analytics (ISO format)
+        - in: query
+          name: endDate
+          schema:
+            type: string
+            format: date-time
+          description: End date for analytics (ISO format)
+      responses:
+        '200':
+          description: Analytics data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/FlagAnalytics'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Feature flag not found
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    FeatureFlagInput:
+      type: object
+      required:
+        - name
+        - key
+      properties:
+        name:
+          type: string
+          description: Display name of the feature flag
+        key:
+          type: string
+          description: Unique key for referencing the feature flag
+        description:
+          type: string
+          description: Description of the feature flag
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Variant'
+          description: Variants for this feature flag
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Environment'
+          description: Environment configurations
+        tags:
+          type: array
+          items:
+            type: string
+          description: Tags for the feature flag
+
+    FeatureFlagUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Display name of the feature flag
+        description:
+          type: string
+          description: Description of the feature flag
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Variant'
+          description: Variants for this feature flag
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Environment'
+          description: Environment configurations
+        tags:
+          type: array
+          items:
+            type: string
+          description: Tags for the feature flag
+
+    FeatureFlag:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: Unique identifier
+        name:
+          type: string
+          description: Display name of the feature flag
+        key:
+          type: string
+          description: Unique key for referencing the feature flag
+        description:
+          type: string
+          description: Description of the feature flag
+        project:
+          type: string
+          description: Project ID
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Variant'
+          description: Variants for this feature flag
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Environment'
+          description: Environment configurations
+        tags:
+          type: array
+          items:
+            type: string
+          description: Tags for the feature flag
+        createdBy:
+          type: string
+          description: User ID who created the flag
+        createdAt:
+          type: string
+          format: date-time
+          description: Creation timestamp
+        updatedAt:
+          type: string
+          format: date-time
+          description: Last update timestamp
+
+    Variant:
+      type: object
+      required:
+        - name
+        - value
+      properties:
+        name:
+          type: string
+          description: Name of the variant
+        value:
+          description: Value of the variant (any type)
+        description:
+          type: string
+          description: Description of the variant
+        weight:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Weight of the variant for A/B testing (0-100)
+
+    Environment:
+      type: object
+      required:
+        - name
+        - enabled
+        - defaultVariant
+      properties:
+        name:
+          type: string
+          enum: [development, staging, production]
+          description: Name of the environment
+        enabled:
+          type: boolean
+          description: Whether the flag is enabled in this environment
+        rules:
+          type: array
+          items:
+            $ref: '#/components/schemas/Rule'
+          description: Targeting rules for this environment
+        defaultVariant:
+          type: string
+          description: Default variant to use if no rules match
+        rolloutPercentage:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Percentage of users to roll out to (0-100)
+
+    Rule:
+      type: object
+      required:
+        - attribute
+        - operator
+        - values
+      properties:
+        attribute:
+          type: string
+          description: User attribute to target (e.g., 'country', 'role')
+        operator:
+          type: string
+          enum: [equals, notEquals, contains, notContains, greaterThan, lessThan, in, notIn, startsWith, endsWith]
+          description: Comparison operator
+        values:
+          type: array
+          description: Values to compare against
+
+    EvaluationResult:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: Whether the feature flag is enabled for this user
+        variant:
+          type: string
+          description: The variant selected for this user
+        value:
+          description: The value of the selected variant
+        reason:
+          type: string
+          description: Reason for the evaluation result
+
+    FlagAnalytics:
+      type: object
+      properties:
+        totalEvaluations:
+          type: integer
+          description: Total number of evaluations
+        enabledCount:
+          type: integer
+          description: Number of times the flag was enabled
+        disabledCount:
+          type: integer
+          description: Number of times the flag was disabled
+        enabledPercentage:
+          type: number
+          description: Percentage of evaluations where the flag was enabled
+        uniqueUsers:
+          type: integer
+          description: Number of unique users
+        variantDistribution:
+          type: array
+          items:
+            type: object
+            properties:
+              variant:
+                type: string
+                description: Variant name
+              count:
+                type: integer
+                description: Number of times this variant was selected
+              percentage:
+                type: number
+                description: Percentage of times this variant was selected
