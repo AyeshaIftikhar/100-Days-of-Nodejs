@@ -1,0 +1,50 @@
+{
+  "name": "image-processing-wasm-api",
+  "version": "1.0.0",
+  "description": "A WebAssembly-powered API for high-performance image processing",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build:wasm": "cd src/wasm && npm run build",
+    "test": "jest",
+    "lint": "eslint src/**/*.js"
+  },
+  "keywords": [
+    "webassembly",
+    "wasm",
+    "image-processing",
+    "api",
+    "nodejs",
+    "express"
+  ],
+  "author": "Ayesha Iftikhar @ Aishayy",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "fs": "^0.0.1-security",
+    "helmet": "^7.2.0",
+    "joi": "^17.11.0",
+    "module": "^1.2.5",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7",
+    "sharp": "^0.33.5",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^12.0.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

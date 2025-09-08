@@ -1,0 +1,9 @@
+{
+  "name": "image-processing-wasm",
+  "version": "1.0.0",
+  "description": "WebAssembly module for image processing",
+  "scripts": {
+    "build": "emcmake cmake . && make",
+    "clean": "rm -rf image_processing.* CMakeFiles CMakeCache.txt cmake_install.cmake Makefile"
+  }
+}
