@@ -185,10 +185,10 @@ _Focus_: Microservices, DevOps, Scalability, AI
 | 84.  | ChatApp (Voice + Video)                            | ✅     | 07-09-2025   |
 | 85.  | Automated Testing Framework                        | ✅     | 07-09-2025   |
 | 86.  | WebAssembly-Powered API                            | ✅     | 08-09-2025   |
-| 87.  | Chaos Engineering Tool                             | 🔄     | 09-09-2025   |
-| 88.  | Real-Time Collaborative Editor                     | 🔄     | 10-09-2025   |
-| 89.  | Low-Code API Builder                               | 🔄     | 11-09-2025   |
-| 90.  | Auth0 Clone                                        | 🔄     | 12-09-2025   |
+| 87.  | Chaos Engineering Tool                             | ✅     | 09-09-2025   |
+| 88.  | Real-Time Collaborative Editor                     | ✅     | 10-09-2025   |
+| 89.  | Low-Code API Builder                               | ✅     | 11-09-2025   |
+| 90.  | Auth0 Clone                                        | ✅     | 12-09-2025   |
 | 91.  | Database Sharding Demo                             | 🔄     | 13-09-2025   |
 | 92.  | Zero-Knowledge Proof Demo                          | 🔄     | 14-09-2025   |
 | 93.  | Blockchain Explorer (API + Stimulator)             | 🔄     | 15-09-2025   |

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auth0 Clone - Sign Up</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Auth0 Clone</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup" class="active">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="auth-container">
+        <div class="auth-card">
+          <h2>Create an Account</h2>
+          <div id="signup-error" class="error-message"></div>
+          
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required>
+              <div class="password-requirements">
+                <p>Password must:</p>
+                <ul>
+                  <li id="req-length">Be at least 8 characters long</li>
+                  <li id="req-uppercase">Contain at least one uppercase letter</li>
+                  <li id="req-lowercase">Contain at least one lowercase letter</li>
+                  <li id="req-number">Contain at least one number</li>
+                  <li id="req-special">Contain at least one special character</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Sign Up</button>
+            </div>
+          </form>
+          
+          <div class="social-login">
+            <p>Or sign up with:</p>
+            <div class="social-buttons">
+              <button id="google-signup" class="btn social google">
+                Google
+              </button>
+              <button id="github-signup" class="btn social github">
+                GitHub
+              </button>
+            </div>
+          </div>
+          
+          <div class="auth-footer">
+            <p>Already have an account? <a href="/login">Login</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Auth0 Clone</p>
+    </footer>
+  </div>
+
+  <script src="/js/auth.js"></script>
+  <script src="/js/signup.js"></script>
+</body>
+</html>
