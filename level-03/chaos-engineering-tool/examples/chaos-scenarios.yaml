@@ -1,0 +1,43 @@
+scenarios:
+  - name: "CPU stress test"
+    type: "cpu"
+    load: 70
+    duration: 30
+    safeMode: true
+    schedule: "0 */2 * * *"  # Every 2 hours
+    
+  - name: "Memory pressure"
+    type: "memory"
+    load: 80
+    duration: 60
+    safeMode: true
+    
+  - name: "API latency"
+    type: "api"
+    target: "http://localhost:3000/api/users"
+    params:
+      status: 200
+      rate: 100
+      delay: 2000
+    duration: 120
+    
+  - name: "Database connection failures"
+    type: "database"
+    target: "mongodb://localhost:27017"
+    action: "connection-drop"
+    duration: 45
+    schedule: "30 12 * * 1-5"  # Weekdays at 12:30
+    
+  - name: "Network latency"
+    type: "network"
+    action: "latency"
+    target: "api.example.com"
+    params:
+      delay: 200
+    duration: 90
+    
+  - name: "Process restart"
+    type: "process"
+    action: "restart"
+    random: true
+    exclude: "node,systemd,ssh"
