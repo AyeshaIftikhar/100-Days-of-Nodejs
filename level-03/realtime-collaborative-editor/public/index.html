@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Collaborative Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <h1>Collaborative Editor</h1>
+            </div>
+            <div class="document-actions">
+                <input type="text" id="document-title" placeholder="Untitled Document" />
+                <div class="document-controls">
+                    <button id="new-doc-btn" class="btn">New Document</button>
+                    <button id="share-btn" class="btn">Share</button>
+                </div>
+            </div>
+            <div class="active-users" id="active-users">
+                <!-- Active users will be rendered here -->
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="sidebar">
+                <h3>Recent Documents</h3>
+                <ul id="document-list" class="document-list">
+                    <!-- Document list will be populated here -->
+                </ul>
+            </div>
+            <div class="editor-container">
+                <textarea id="editor"></textarea>
+            </div>
+        </main>
+
+        <div id="share-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Share Document</h3>
+                <p>Share this link with others to collaborate:</p>
+                <div class="share-link-container">
+                    <input type="text" id="share-link" readonly />
+                    <button id="copy-link-btn" class="btn">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ui.js"></script>
+    <script src="js/socket-client.js"></script>
+    <script src="js/editor.js"></script>
+</body>
+</html>
