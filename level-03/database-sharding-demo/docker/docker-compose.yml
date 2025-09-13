@@ -1,0 +1,93 @@
+version: '3.8'
+
+services:
+  # Config servers
+  config-server:
+    image: mongo:latest
+    container_name: config-server
+    command: mongod --configsvr --replSet configrs --port 27017 --dbpath /data/db
+    ports:
+      - "27117:27017"
+    volumes:
+      - config-server:/data/db
+    networks:
+      - shard-demo
+
+  # Shard 1
+  shard1:
+    image: mongo:latest
+    container_name: shard1
+    command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /data/db
+    ports:
+      - "27118:27017"
+    volumes:
+      - shard1:/data/db
+    networks:
+      - shard-demo
+
+  # Shard 2
+  shard2:
+    image: mongo:latest
+    container_name: shard2
+    command: mongod --shardsvr --replSet shard2rs --port 27017 --dbpath /data/db
+    ports:
+      - "27119:27017"
+    volumes:
+      - shard2:/data/db
+    networks:
+      - shard-demo
+
+  # Shard 3
+  shard3:
+    image: mongo:latest
+    container_name: shard3
+    command: mongod --shardsvr --replSet shard3rs --port 27017 --dbpath /data/db
+    ports:
+      - "27120:27017"
+    volumes:
+      - shard3:/data/db
+    networks:
+      - shard-demo
+
+  # Mongos router
+  mongos:
+    image: mongo:latest
+    container_name: mongos
+    depends_on:
+      - config-server
+      - shard1
+      - shard2
+      - shard3
+    command: mongos --configdb configrs/config-server:27017 --port 27017
+    ports:
+      - "27017:27017"
+    networks:
+      - shard-demo
+
+  # Mongo setup container
+  mongo-setup:
+    image: mongo:latest
+    container_name: mongo-setup
+    restart: "no"
+    depends_on:
+      - config-server
+      - shard1
+      - shard2
+      - shard3
+      - mongos
+    volumes:
+      - ./mongo/setup.sh:/scripts/setup.sh
+      - ./mongo/init.js:/scripts/init.js
+    entrypoint: ["bash", "/scripts/setup.sh"]
+    networks:
+      - shard-demo
+
+networks:
+  shard-demo:
+    driver: bridge
+
+volumes:
+  config-server:
+  shard1:
+  shard2:
+  shard3:
