@@ -1,0 +1,29 @@
+{
+  "name": "zkp-auth-demo",
+  "version": "1.0.0",
+  "description": "Zero-Knowledge Proof Authentication Demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "start:client": "cd client && npm run dev",
+    "start:server": "cd server && npm run dev",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install && cd ../circuits && npm install",
+    "build": "npm run build:circuits && npm run build:client",
+    "build:client": "cd client && npm run build",
+    "build:circuits": "cd circuits && npm run build"
+  },
+  "keywords": [
+    "zero-knowledge-proof",
+    "zkp",
+    "authentication",
+    "security",
+    "nodejs",
+    "react",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
