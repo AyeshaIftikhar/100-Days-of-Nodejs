@@ -1,0 +1,129 @@
+name: Code Quality Checks
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  code-quality:
+    name: Code Quality Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: |
+          backend/package-lock.json
+          frontend/package-lock.json
+    
+    - name: Install backend dependencies
+      working-directory: backend
+      run: npm ci
+      
+    - name: Install frontend dependencies
+      working-directory: frontend
+      run: npm ci
+    
+    - name: Run ESLint on backend
+      working-directory: backend
+      run: npm run lint
+      
+    - name: Run ESLint on frontend
+      working-directory: frontend
+      run: npm run lint
+    
+    - name: Run TypeScript type check - Backend
+      working-directory: backend
+      run: npx tsc --noEmit
+      
+    - name: Run TypeScript type check - Frontend
+      working-directory: frontend
+      run: npx tsc --noEmit
+    
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  dependency-check:
+    name: Dependency Vulnerability Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Check for known vulnerabilities - Backend
+      working-directory: backend
+      run: |
+        npm audit --audit-level=moderate
+        npx audit-ci --moderate
+    
+    - name: Check for known vulnerabilities - Frontend
+      working-directory: frontend
+      run: |
+        npm audit --audit-level=moderate
+        npx audit-ci --moderate
+
+  performance-test:
+    name: Performance Testing
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
+    
+    - name: Install backend dependencies
+      working-directory: backend
+      run: npm ci
+    
+    - name: Start backend server
+      working-directory: backend
+      run: |
+        npm run build
+        npm start &
+        sleep 10
+      env:
+        NODE_ENV: test
+        JWT_SECRET: test-secret
+    
+    - name: Install Artillery
+      run: npm install -g artillery
+    
+    - name: Run load tests
+      run: |
+        artillery run --output performance-report.json .github/workflows/load-test.yml
+    
+    - name: Generate performance report
+      run: |
+        artillery report performance-report.json
+    
+    - name: Upload performance report
+      uses: actions/upload-artifact@v3
+      with:
+        name: performance-report
+        path: performance-report.html

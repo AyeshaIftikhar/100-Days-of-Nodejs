@@ -21,7 +21,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/zkp', zkpRoutes);
 
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get('/health', (req: express.Request, res: express.Response) => {
   res.status(200).json({ status: 'ok' });
 });
 
@@ -36,7 +36,7 @@ mongoose
       console.log(`Server running on port ${PORT}`);
     });
   })
-  .catch((error) => {
+  .catch((error: Error) => {
     console.error('MongoDB connection error:', error);
     process.exit(1);
   });

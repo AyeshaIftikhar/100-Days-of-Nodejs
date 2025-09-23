@@ -1,8 +1,9 @@
 import { readFileSync } from 'fs';
 import path from 'path';
 import * as snarkjs from 'snarkjs';
+import crypto from 'crypto';
 
-// Path to verification key
+// Path to verification key - use __dirname for Node.js environment
 const vKeyPath = path.join(__dirname, '../../circuits/build/verification_key.json');
 
 /**
@@ -24,7 +25,7 @@ export async function verifyProof(
     const result = await snarkjs.groth16.verify(vKey, publicSignals, proof);
     
     return result;
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Error verifying ZKP:', error);
     return false;
   }
@@ -36,11 +37,9 @@ export async function verifyProof(
  * @returns string - Random salt as hex string
  */
 export function generateSalt(): string {
-  const randomBytes = new Uint8Array(32);
-  crypto.getRandomValues(randomBytes);
-  return Array.from(randomBytes)
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('');
+  // Use Node.js crypto module instead of browser's crypto
+  const randomBytes = crypto.randomBytes(32);
+  return randomBytes.toString('hex');
 }
 
 /**

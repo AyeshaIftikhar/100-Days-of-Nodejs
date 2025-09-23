@@ -1,0 +1,49 @@
+{
+  "name": "facial-recognition-system",
+  "version": "1.0.0",
+  "description": "A complete full-stack facial recognition system built with Node.js, React, and TypeScript",
+  "private": true,
+  "scripts": {
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "npm run start:backend",
+    "start:backend": "cd backend && npm start",
+    "db:init": "cd backend && npm run db:init",
+    "clean": "rm -rf backend/node_modules frontend/node_modules backend/dist frontend/dist",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint"
+  },
+  "keywords": [
+    "facial-recognition",
+    "nodejs",
+    "react",
+    "typescript",
+    "express",
+    "face-api",
+    "attendance-system",
+    "computer-vision",
+    "full-stack"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/facial-recognition-system.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}

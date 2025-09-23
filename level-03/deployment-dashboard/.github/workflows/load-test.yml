@@ -1,0 +1,72 @@
+config:
+  target: 'http://localhost:3001'
+  phases:
+    - duration: 60
+      arrivalRate: 5
+    - duration: 60
+      arrivalRate: 10
+    - duration: 60
+      arrivalRate: 15
+  processor: "./load-test-functions.js"
+
+scenarios:
+  - name: "Health Check"
+    weight: 20
+    flow:
+      - get:
+          url: "/api/health"
+          expect:
+            - statusCode: 200
+
+  - name: "User Authentication Flow"
+    weight: 30
+    flow:
+      - post:
+          url: "/api/auth/register"
+          json:
+            email: "test{{ $randomString() }}@example.com"
+            password: "testpassword123"
+            name: "Test User"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      - post:
+          url: "/api/auth/login"
+          json:
+            email: "test@example.com"
+            password: "testpassword123"
+          expect:
+            - statusCode: [200, 401]
+
+  - name: "Projects API"
+    weight: 25
+    flow:
+      - function: "authenticateUser"
+      - get:
+          url: "/api/projects"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          expect:
+            - statusCode: 200
+
+  - name: "Pipelines API"
+    weight: 15
+    flow:
+      - function: "authenticateUser"
+      - get:
+          url: "/api/pipelines"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          expect:
+            - statusCode: 200
+
+  - name: "Deployments API"
+    weight: 10
+    flow:
+      - function: "authenticateUser"
+      - get:
+          url: "/api/deployments"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          expect:
+            - statusCode: 200

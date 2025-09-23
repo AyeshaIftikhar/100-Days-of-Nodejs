@@ -42,7 +42,7 @@ export const verifyAuth = async (req: Request, res: Response): Promise<void> => 
       username: user.username,
       token: generateToken(user.username) // In a real app, you'd use JWT here
     });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('ZKP verification error:', error);
     res.status(500).json({ error: 'Server error during verification' });
   }

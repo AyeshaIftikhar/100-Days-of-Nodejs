@@ -40,7 +40,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
       username,
       salt
     });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Registration error:', error);
     res.status(500).json({ error: 'Server error during registration' });
   }
@@ -62,7 +62,7 @@ export const getSalt = async (req: Request, res: Response): Promise<void> => {
 
     // Return the salt for ZKP generation
     res.status(200).json({ salt: user.salt });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Get salt error:', error);
     res.status(500).json({ error: 'Server error while retrieving salt' });
   }
@@ -87,7 +87,7 @@ export const getUser = async (req: Request, res: Response): Promise<void> => {
       username: user.username,
       createdAt: user.createdAt
     });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Get user error:', error);
     res.status(500).json({ error: 'Server error while retrieving user' });
   }

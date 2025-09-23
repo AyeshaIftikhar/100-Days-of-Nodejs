@@ -1,0 +1,38 @@
+{
+  "name": "decentralized-charity-platform",
+  "version": "1.0.0",
+  "description": "A decentralized charity donation platform built on Ethereum blockchain",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run frontend:dev\" \"npm run backend:dev\"",
+    "frontend:dev": "cd frontend && npm run dev",
+    "backend:dev": "cd backend && npm run dev",
+    "contracts:compile": "cd contracts && npx hardhat compile",
+    "contracts:test": "cd contracts && npx hardhat test",
+    "contracts:deploy": "cd contracts && npx hardhat run scripts/deploy.js --network localhost",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../contracts && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "lint": "cd frontend && npm run lint && cd ../backend && npm run lint",
+    "type-check": "cd frontend && npm run type-check"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "charity",
+    "donation",
+    "decentralized",
+    "web3",
+    "dapp",
+    "transparency"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

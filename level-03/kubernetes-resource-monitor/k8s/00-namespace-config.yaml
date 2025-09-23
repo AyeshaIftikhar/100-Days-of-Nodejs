@@ -1,0 +1,45 @@
+# Namespace for the application
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: resource-monitor
+  labels:
+    name: resource-monitor
+    app.kubernetes.io/name: kubernetes-resource-monitor
+    app.kubernetes.io/version: "1.0.0"
+---
+# ConfigMap for application configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: resource-monitor-config
+  namespace: resource-monitor
+data:
+  NODE_ENV: "production"
+  PORT: "3001"
+  MONGODB_URI: "mongodb://mongodb-service:27017/resource_monitor"
+  REDIS_HOST: "redis-service"
+  REDIS_PORT: "6379"
+  CORS_ORIGIN: "http://frontend-service:8080"
+  METRICS_COLLECTION_INTERVAL: "5000"
+  ALERT_THRESHOLD_CPU: "80"
+  ALERT_THRESHOLD_MEMORY: "85"
+  ALERT_THRESHOLD_DISK: "90"
+---
+# Secret for sensitive data
+apiVersion: v1
+kind: Secret
+metadata:
+  name: resource-monitor-secrets
+  namespace: resource-monitor
+type: Opaque
+data:
+  # Base64 encoded values
+  # JWT_SECRET: eW91ci1zdXBlci1zZWNyZXQtand0LWtleS1jaGFuZ2UtaW4tcHJvZHVjdGlvbg==
+  # JWT_REFRESH_SECRET: eW91ci1zdXBlci1zZWNyZXQtcmVmcmVzaC1rZXktY2hhbmdlLWluLXByb2R1Y3Rpb24=
+  # MONGODB_PASSWORD: cGFzc3dvcmQxMjM=
+  # REDIS_PASSWORD: cGFzc3dvcmQxMjM=
+  JWT_SECRET: eW91ci1zdXBlci1zZWNyZXQtand0LWtleS1jaGFuZ2UtaW4tcHJvZHVjdGlvbg==
+  JWT_REFRESH_SECRET: eW91ci1zdXBlci1zZWNyZXQtcmVmcmVzaC1rZXktY2hhbmdlLWluLXByb2R1Y3Rpb24=
+  MONGODB_PASSWORD: cGFzc3dvcmQxMjM=
+  REDIS_PASSWORD: cGFzc3dvcmQxMjM=
